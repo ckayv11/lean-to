@@ -22,12 +22,16 @@ nav ul {
 }
 
 nav ul a {
-  color: rgb(87, 87, 87) !important;
+  color: rgb(105, 105, 105) !important;
 }
 
 nav ul.left {
   padding-left: 20px;
   /* margin: 0 auto; */
+}
+
+nav ul.right {
+  padding-right: 20px;
 }
 
 /* ==================================== slider ==================================== */
@@ -48,4 +52,12 @@ h1 {
 
 h1.main {
   padding-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  border-top: rgb(105, 105, 105) solid 2px;
+  border-bottom: rgb(105, 105, 105) solid 2px;
+  padding: 10px 0 10px 0;
+  color: rgb(105, 105, 105);
 }
