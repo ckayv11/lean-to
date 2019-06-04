@@ -13,11 +13,6 @@
   height: 40px;
 }
 
-.nav-wrapper sec-nav {
-  background-color: transparent !important;
-  height: 40px;
-}
-
 nav ul {
   margin: -10px;
 }
@@ -32,9 +27,25 @@ nav ul a {
 
 nav ul.left {
   padding-left: 20px;
+  /* margin: 0 auto; */
 }
 
 /* ==================================== slider ==================================== */
 .slider {
-  margin: 0 0 20px 0;
+  margin: 20px 0 20px 0;
+  clear: left;
+}
+
+.row.center-align {
+  padding: 0;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+h1.main {
+  padding-bottom: 20px;
 }
