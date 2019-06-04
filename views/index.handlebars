@@ -1,17 +1,80 @@
 <div id="home">
+
+  {{!-- 1st nav --}}
+  <div class="navbar-fixed">
+    <nav id="first-nav">
+      <div class="nav-wrapper first-nav">
+        {{!-- <a href="#" class="brand-logo right">Logo</a> --}}
+        <ul id="nav-mobile" class="left">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="/">Categories</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
   <div class="container">
-    <div class="row">
+
+    {{!-- hero image --}}
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>One's life has value as long as one attributes value to the life of others, by means of love,
+              friendship, indignation, and compassion. - Simone de Beauvoir</h3>
+          </div>
+        </li>
+        <li>
+          <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>One's life has value as long as one attributes value to the life of others, by means of love,
+              friendship, indignation, and compassion. - Simone de Beauvoir</h3>
+          </div>
+        </li>
+        <li>
+          <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>One's life has value as long as one attributes value to the life of others, by means of love,
+              friendship, indignation, and compassion. - Simone de Beauvoir</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    {{!-- 2nd nav --}}
+    <nav id="sec-nav">
+      <div class="nav-wrapper sec-nav">
+        <ul class="left">
+          <li><a href="/">Mind & Body</a></li>
+          <li><a href="/">Love & Intimacy</a></li>
+          <li><a href="/">Fertility & Pregnancy</a></li>
+          <li><a href="/">Family & Parenting</a></li>
+          <li><a href="/">Women’s Health</a></li>
+          <li><a href="/">Women in the Workplace</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
+
+  {{!-- example code below --}}
+  {{!-- <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
         <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
+              placeholder="Enter Example Text">
           </div>
           <div class="form-group">
             <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description"
+              placeholder="Enter Example Description"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
@@ -25,8 +88,10 @@
           {{/each}}
         </ul>
       </div>
-    </div>
-  </div>
+    </div> --}}
+  {{!--  --}}
+
+
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

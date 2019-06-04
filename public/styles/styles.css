@@ -1,3 +1,40 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+/* ==================================== nav styling ==================================== */
+#first-nav {
+  background-color: #FFFBE8;
+  height: 40px;
+}
+
+#sec-nav {
+  background-color: transparent !important;
+  height: 40px;
+}
+
+.nav-wrapper sec-nav {
+  background-color: transparent !important;
+  height: 40px;
+}
+
+nav ul {
+  margin: -10px;
+}
+
+.nav-mobile {
+  padding-left: 10px;
+}
+
+nav ul a {
+  color: rgb(87, 87, 87) !important;
+}
+
+nav ul.left {
+  padding-left: 20px;
+}
+
+/* ==================================== slider ==================================== */
+.slider {
+  margin: 0 0 20px 0;
+}
