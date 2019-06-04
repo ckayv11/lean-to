@@ -1,5 +1,10 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS volunteerdb;
+CREATE DATABASE volunteerdb;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+---name, phone number, email address, password, services offered, zip?, d.o.b
+
+DROP DATABASE IF EXISTS userdb;
+CREATE DATABASE userdb;
+
+---name, phone number, email address, password, zip?
+---what service do you need?
