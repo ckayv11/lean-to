@@ -40,18 +40,14 @@ nav ul.right {
   clear: left;
 }
 
-.row.center-align {
-  padding: 0;
-  overflow: auto;
-  margin: 0 auto;
-}
-
+/* ==================================== headers ==================================== */
 h1 {
   margin: 0 auto;
 }
 
 h1.main {
   padding-bottom: 20px;
+  color: rgb(105, 105, 105);
 }
 
 h3 {
@@ -60,4 +56,24 @@ h3 {
   border-bottom: rgb(105, 105, 105) solid 2px;
   padding: 10px 0 10px 0;
   color: rgb(105, 105, 105);
+}
+
+/* ==================================== etc. ==================================== */
+a {
+  color: rgb(105, 105, 105);
+}
+
+.row.center-align {
+  padding: 0;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+/* ==================================== footer ==================================== */
+.page-footer {
+  background-color: #FFFBE8;
+}
+
+.footer-copyright {
+  color: rgb(105, 105, 105) !important;
 }
