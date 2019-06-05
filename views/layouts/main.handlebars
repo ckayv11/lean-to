@@ -4,11 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/styles/reset.css">
-  <script src="https://kit.fontawesome.com/85f0bdccf3.js"></script>
   {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> --}}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/js/materialize.js"></script>
   <link rel="stylesheet" href="/styles/materialize.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
 
@@ -16,39 +13,44 @@
 
 </head>
 
-  {{!-- 1st nav --}}
-  <div class="navbar-fixed">
-    <nav id="first-nav">
-      <div class="nav-wrapper first-nav">
-        {{!-- <a href="#" class="brand-logo right">Logo</a> --}}
-        <ul id="nav-mobile" class="left">
-          <li><a href="/">Home</a></li>
-          <li><a href="/">About</a></li>
-          <li><a href="/">Services</a></li>
-          <li><a href="/">Categories</a></li>
-        </ul>
-        <ul id="nav-mobile" class="right">
-          <li><a href="/">Sign-up</a></li>
-          <li><a href="/">Login</a></li>
-          <li><a href="/"><i class="fab fa-facebook-square"></i></a></li>
-          <li><a href="/"><i class="fab fa-twitter-square"></i></a></li>
-          <li><a href="/"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+{{!-- 1st nav --}}
+<div class="navbar-fixed">
+  <nav id="first-nav">
+    <div class="nav-wrapper first-nav">
+      {{!-- <a href="#" class="brand-logo right">Logo</a> --}}
+      <ul id="nav-mobile" class="left">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/categories">Categories</a></li>
+      </ul>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/services">Sign-up</a></li>
+        <li><a href="/">Login</a></li>
+        <li><a href="/"><i class="fab fa-facebook-square"></i></a></li>
+        <li><a href="/"><i class="fab fa-twitter-square"></i></a></li>
+        <li><a href="/"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
 <body>
   {{{body}}}
 </body>
 
-        <footer class="page-footer">
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright Text
-            <a class="right" href="/">More Links</a>
-            </div>
-          </div>
-        </footer>
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      © 2019 Copyright Text
+      <a class="right" href="/">More Links</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/85f0bdccf3.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/materialize.js"></script>
+<script src="/js/index.js"></script>
 
 </html>

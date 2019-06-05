@@ -41,6 +41,26 @@ nav ul.right {
   clear: left;
 }
 
+.slider .slides {
+  background-color: #70597C;
+}
+
+.slider .indicators .indicator-item {
+  background-color: #CCCDD1;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: #897A92;
+}
+
+.caption h3 {
+  color: whitesmoke;
+  background-color: rgba(137, 122, 146, 0.664);
+  font-size: 40px;
+  border-top: transparent;
+  border-bottom: transparent;
+}
+
 /* ==================================== headers ==================================== */
 h1 {
   margin: 0 auto;
@@ -52,6 +72,7 @@ h1.main {
 }
 
 h3 {
+  font-family: serif;
   font-size: 24px;
   border-top: rgb(105, 105, 105) solid 2px;
   border-bottom: rgb(105, 105, 105) solid 2px;
