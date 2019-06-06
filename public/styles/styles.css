@@ -23,7 +23,12 @@ nav ul {
 }
 
 nav ul a {
-  color: rgb(105, 105, 105) !important;
+  color: rgb(105, 105, 105);
+  height: 50px;
+}
+
+nav ul a:hover {
+  background-color: rgb(245, 239, 216);
 }
 
 nav ul.left {
@@ -33,6 +38,10 @@ nav ul.left {
 
 nav ul.right {
   padding-right: 20px;
+}
+
+li {
+  height: 50px;
 }
 
 /* ==================================== slider ==================================== */
@@ -74,8 +83,8 @@ h1.main {
 h3 {
   font-family: serif;
   font-size: 24px;
-  border-top: rgb(105, 105, 105) solid 2px;
-  border-bottom: rgb(105, 105, 105) solid 2px;
+  border-top: rgba(105, 105, 105, 0.61) solid 1px;
+  border-bottom: rgba(105, 105, 105, 0.61) solid 1px;
   padding: 10px 0 10px 0;
   color: rgb(105, 105, 105);
 }
@@ -131,13 +140,29 @@ a {
 
 
 /* ==================================== footer ==================================== */
-.page-footer {
+/* .page-footer {
   background-color: #FFFBE8;
   padding-top: 0;
 }
 
 .footer-copyright {
   color: rgb(105, 105, 105) !important;
+} */
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #eceff1;
+  text-align: left;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.social-icons {
+  float: right;
+  margin-right: 10px;
+  color: #455a64;
 }
 
 /* ==================================== Hero Banner ==================================== */
