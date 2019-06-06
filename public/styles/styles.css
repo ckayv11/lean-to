@@ -91,6 +91,45 @@ a {
   margin: 0 auto;
 }
 
+#services {
+  text-align: center;
+  color: rgb(105, 105, 105);
+  border-top: rgb(105, 105, 105) solid 1px;
+  padding-bottom: 10px;
+}
+
+#title {
+  color:black;
+  font-weight: bold;
+  text-align: right;
+}
+
+#title1 {
+  font-weight: bold;
+}
+
+#request_volunteer {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 250px;
+  padding-bottom: 30px;
+  margin-right: 300px;
+}
+
+#request {
+  margin-right: 50px;
+  background-color: #FFFBE8;
+  color: black;
+}
+
+#volunteer {
+  margin-right: 300px;
+  background-color: #FFFBE8;
+  color: black;
+}
+
+
 /* ==================================== footer ==================================== */
 .page-footer {
   background-color: #FFFBE8;
@@ -127,6 +166,12 @@ a {
   height: 130px;
 }
 
-
-
-
+#services-hero-image {
+  background-image: url('/images/laptops-signup.jpg');
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 10px;
+}
