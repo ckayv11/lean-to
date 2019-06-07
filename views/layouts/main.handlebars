@@ -25,7 +25,392 @@
         <li><a href="/categories">Categories</a></li>
       </ul>
       <ul id="nav-mobile" class="right">
-        <li><a href="/services">Sign-up</a></li>
+        <li>
+          <a class="modal-trigger" href="#modal3">Volunteer</a>
+          <div id="modal3" class="modal">
+            <div class="modal-content">
+              <h4>Request to be a volunteer:</h4>
+              <div class="row">
+                <div class="col s12">
+                  <h6>
+                    Volunteering will give you the chance to create the kind of community you would like to live in. By
+                    volunteering, you will meet new people who may later become your friend or boss. As a volunteer you
+                    will provide meaningful connections to all within our community and give back to neighbors who need
+                    a little help. Our volunteer experiences are varied, so you will find something that will be a good
+                    fit for your available time and interests. If you think this is right for you, then please fill out
+                    the short form below and our Volunteer Program Manager will be in touch with you.
+                    Thank you for your time!
+                  </h6>
+                </div>
+              </div>
+              <br>
+              <h4>Contact Information</h4>
+              <div class="row">
+                <form class="col s12" id="volunteer">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Jane" id="first_name" type="text" class="validate">
+                      <label for="first_name">First Name: </label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Smith" id="last_name" type="text" class="validate">
+                      <label for="last_name">Last Name: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="123 Main Street" id="street_address" type="text" class="validate">
+                      <label for="street_address">Address: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Apt. 137" id="address_2" type="text" class="validate">
+                      <label for="address_2">Address: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s3">
+                      <input placeholder="Kansas City" id="city" type="text" class="validate">
+                      <label for="city">City: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="Kansas" id="state" type="text" class="validate">
+                      <label for="state">State: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="66012" id="zip_code" type="text" class="validate">
+                      <label for="zip_code">Zip Code: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s3">
+                      <input placeholder="123-456-7890" id="phone_number" type="text" class="validate">
+                      <label for="phone_number">Phone Number: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="email@something.com" id="email" type="text" class="validate">
+                      <label for="email">Email: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="01/01/2001" id="date_of_birth" type="text" class="validate">
+                      <label for="date_of_birth">Date of Birth: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <h6>Gender:</h6>
+                    <div class="col s12">
+                      <p>
+                        <label>
+                          <input id="male" class="with-gap" name="gender" type="radio" />
+                          <span>Male</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input id="female" class="with-gap" name="gender" type="radio" />
+                          <span>Female</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input id="non_binary" class="with-gap" name="gender" type="radio" />
+                          <span>Non-Binary</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input id="denies" class="with-gap" name="gender" type="radio" />
+                          <span>Prefer not to disclose</span>
+                        </label>
+                      </p>
+                    </div>
+                  </div>
+                  <h4>Availability</h4>
+                  <h6>What days are you available for volunteer assignments?</h6>
+                  <p>
+                    <label>
+                      <input id="monday" type="checkbox" class="filled-in" />
+                      <span>Monday</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="tuesday" type="checkbox" class="filled-in" />
+                      <span>Tuesday</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="wednesday" type="checkbox" class="filled-in" />
+                      <span>Wednesday</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="thursday" type="checkbox" class="filled-in" />
+                      <span>Thursday</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="friday" type="checkbox" class="filled-in" />
+                      <span>Friday</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="saturday" type="checkbox" class="filled-in" />
+                      <span>Saturday</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="sunday" type="checkbox" class="filled-in" />
+                      <span>Sunday</span>
+                    </label>
+                  </p>
+                  <h4>Interests</h4>
+                  <h6>In which areas are you best suited to volunteer?</h6>
+                  <p>
+                    <label>
+                      <input id="transportation" type="checkbox" class="filled-in" />
+                      <span>Transportation</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="pet_care" type="checkbox" class="filled-in" />
+                      <span>Pet Care</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="babysitting" type="checkbox" class="filled-in" />
+                      <span>Babysitting</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="groceries" type="checkbox" class="filled-in" />
+                      <span>Groceries</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="errands" type="checkbox" class="filled-in" />
+                      <span>Errands</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="yardwork" type="checkbox" class="filled-in" />
+                      <span>Yardwork</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="housekeeping" type="checkbox" class="filled-in" />
+                      <span>Housekeeping</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="home_projects" type="checkbox" class="filled-in" />
+                      <span>Home Projects</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="movers" type="checkbox" class="filled-in" />
+                      <span>Movers</span>
+                    </label>
+                  </p>
+                  <a class="modal-close waves-effect waves-light btn">Submit</a>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              {{!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> --}}
+            </div>
+          </div>
+        </li>
+        <li>
+          <a class="modal-trigger" href="#modal4">Request Assistance</a>
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+              <h4>Request services:</h4>
+              <div class="row">
+                <div class="col s12">
+                  <h6>
+                    We see a world where all of our neighbors have access to supportive community,
+                    one where everyone works together to help one another. Our mission is to enhance
+                    the lives of those in need by offering our compassion, skills and services to all.
+                    Please fill out the short form below and our Volunteer Program Manager will be in
+                    touch with you. Thank you!
+                  </h6>
+                </div>
+              </div>
+              <br>
+              <h4>Contact Information</h4>
+              <div class="row">
+                <form class="col s12" id="request_services">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Jane" id="first_name" type="text" class="validate">
+                      <label for="first_name">First Name: </label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Smith" id="last_name" type="text" class="validate">
+                      <label for="last_name">Last Name: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="123 Main Street" id="street_address" type="text" class="validate">
+                      <label for="street_address">Address: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Apt. 137" id="address_2" type="text" class="validate">
+                      <label for="address_2">Address: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s3">
+                      <input placeholder="Kansas City" id="city" type="text" class="validate">
+                      <label for="city">City: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="Kansas" id="state" type="text" class="validate">
+                      <label for="state">State: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="66012" id="zip_code" type="text" class="validate">
+                      <label for="zip_code">Zip Code: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s3">
+                      <input placeholder="123-456-7890" id="phone_number" type="text" class="validate">
+                      <label for="phone_number">Phone Number: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="email@something.com" id="email" type="text" class="validate">
+                      <label for="email">Email: </label>
+                    </div>
+                    <div class="input-field col s3">
+                      <input placeholder="01/01/2001" id="date_of_birth" type="text" class="validate">
+                      <label for="date_of_birth">Date of Birth: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <h6>Gender:</h6>
+                    <div class="col s12">
+                      <p>
+                        <label>
+                          <input id="male" class="with-gap" name="gender" type="radio" />
+                          <span>Male</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input id="female" class="with-gap" name="gender" type="radio" />
+                          <span>Female</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input id="non_binary" class="with-gap" name="gender" type="radio" />
+                          <span>Non-Binary</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input id="denies" class="with-gap" name="gender" type="radio" />
+                          <span>Prefer not to disclose</span>
+                        </label>
+                      </p>
+                    </div>
+                  </div>
+                  <h4>Services</h4>
+                  <h6>What services can we help you with?</h6>
+                  <p>
+                    <label>
+                      <input id="transportation" type="checkbox" class="filled-in" />
+                      <span>Transportation</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="pet_care" type="checkbox" class="filled-in" />
+                      <span>Pet Care</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="babysitting" type="checkbox" class="filled-in" />
+                      <span>Babysitting</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="groceries" type="checkbox" class="filled-in" />
+                      <span>Groceries</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="errands" type="checkbox" class="filled-in" />
+                      <span>Errands</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="yardwork" type="checkbox" class="filled-in" />
+                      <span>Yardwork</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="housekeeping" type="checkbox" class="filled-in" />
+                      <span>Housekeeping</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="home_projects" type="checkbox" class="filled-in" />
+                      <span>Home Projects</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input id="movers" type="checkbox" class="filled-in" />
+                      <span>Movers</span>
+                    </label>
+                  </p>
+                  <h6>Tell us a little bit about what you would like done.</h6>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="textarea1" class="materialize-textarea"></textarea>
+                          <label for="textarea1">Describe what you need</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <a class="modal-close waves-effect waves-light btn">Submit</a>
+                </form>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              {{!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> --}}
+            </div>
+          </div>
+        </li>
         <li><a href="/">Login</a></li>
       </ul>
     </div>

@@ -1,9 +1,3 @@
-
-// To load modals
-$(document).ready(function(){
-  $(".modal").modal();
-});
-
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -109,4 +103,5 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 // materialize inits
 $(document).ready(function() {
   $(".slider").slider();
+  $(".modal").modal();
 });

@@ -150,6 +150,14 @@ a {
   color: black;
 }
 
+/* modals */
+.modal-content h4 {
+  color: rgb(105, 105, 105);
+}
+
+.modal-content h6 {
+   color: black;
+}
 
 /* ==================================== footer ==================================== */
 /* .page-footer {
