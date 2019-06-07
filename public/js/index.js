@@ -1,3 +1,9 @@
+
+// To load modals
+$(document).ready(function(){
+  $(".modal").modal();
+});
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -93,6 +99,8 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
+
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
