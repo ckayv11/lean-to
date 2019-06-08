@@ -122,7 +122,6 @@ a {
 #services {
   text-align: center;
   color: rgb(105, 105, 105);
-  /* border-top: rgb(105, 105, 105) solid 1px; */
   padding-bottom: 10px;
 }
 
@@ -154,6 +153,9 @@ a {
   -webkit-box-shadow: none;
 }
 
+.modal-close {
+  background-color: #70597C;
+}
     
 p, h6 {
   height: 100%;
