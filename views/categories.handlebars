@@ -6,37 +6,37 @@
 
       <div class="mind">
         <div class="col s2">
-          <a href="/categories">Mind & Body</a>
+          <a href="/api/categories/women&body">Mind & Body</a>
         </div>
       </div>
 
       <div class="love">
         <div class="col s2">
-          <a href="/categories">Love & Intimacy</a>
+          <a href="/api/categories/intimacy">Love & Intimacy</a>
         </div>
       </div>
 
       <div class="fertility">
         <div class="col s2">
-          <a href="/categories">Fertility & Pregnancy</a>
+          <a href="/api/categories/pregnancy">Fertility & Pregnancy</a>
         </div>
       </div>
 
       <div class="family">
         <div class="col s2">
-          <a href="/categories">Family & Parenting</a>
+          <a href="/api/categories/parenting">Family & Parenting</a>
         </div>
       </div>
 
       <div class="health">
         <div class="col s2">
-          <a href="/categories">Women’s Health</a>
+          <a href="/api/categories/women&health">Women’s Health</a>
         </div>
       </div>
 
       <div class="work">
         <div class="col s2">
-          <a href="/categories">Women in the Workplace</a>
+          <a href="/api/categories/women-in-the-workplace">Women in the Workplace</a>
         </div>
       </div>
 
@@ -62,16 +62,28 @@
 </div>
 
 {{!-- Article Results go here dynamically using API and javascript--}}
-  <div class="row container results-body" style="width:90%"></div>
-      <!-- Article cards go here -->
+  {{!-- {{#if result.articles}} --}}
+  
+  <div class="row container results-body">
+    {{#each result}}
+      <div class="col s12 m6 l4 article-card">
+        <a target="blank" href="{{this.url}}">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img src="{{this.urlToImage}}" alt="article"></div>
+        </div>
+          <div class="card-content center-align">
+            <p>{{this.publishedAt}}</p>
+            <span>{{this.title}}</span>
+            <p>By: {{this.author}}</p>
+          </div>
+        </a>
+      </div>
+      <br>
+        {{/each}}
+  </div>
 
 
-
-<!-- jQuery JS -->
-<script src="https://code.jquery.com/jquery.js"></script>
-<!-- Moment JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-<!--JavaScript at end of body for optimized loading-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/categories.js"></script>
+  {{!-- {{/if}} --}}
+ 
 
