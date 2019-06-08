@@ -3,7 +3,7 @@ $(document).ready(function() {
     var firstNameInput = $("#first_name");
 
     // event listeners
-    $("#submit-vol").on("click", volunteerFormSubmit);
+    $("#submit-volunteer").on("click", volunteerFormSubmit);
 
     listVolunteers();
 
