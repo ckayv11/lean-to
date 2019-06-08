@@ -8318,9 +8318,9 @@
   .slider .slides li .caption {
     color: #fff;
     position: absolute;
-    top: 15%;
-    left: 15%;
-    width: 70%;
+    top: 35%;
+    left: 25%;
+    width: 50%;
     opacity: 0;
   }
   
