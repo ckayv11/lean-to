@@ -109,9 +109,10 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
 
+    {{!-- Request services signup --}}
     <div class="row container">
         <div class="row">
             <div class="col s12 m6">
@@ -119,31 +120,37 @@
                     <div class="card-content grey-darken-3-text">
                         <span class="card-title">Request Assistance</span>
                         <p>Our job is to raise awareness and advocate for women's health and safety. With this in mind,
-                            we aim to provide a safe environment for you to ask for assistance from your community through
-                            careful vetting of our volunteers and our app advanced technology that protects you and keeps you connected
-                            with our team. Whether you need your lawn mowed or someone to pick up your groceries, we are here to help!</p>
+                            we aim to provide a safe environment for you to ask for assistance from your community
+                            through careful vetting of our volunteers and our app advanced technology that protects you
+                            and keeps you connected with our team. Whether you need your lawn mowed or someone to pick
+                            up
+                            your groceries, we are here to help!</p>
                     </div>
                     <div class="card-action">
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="request-btn">Sign-up!</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1"
+                            id="request-btn">Sign-up!</a>
                     </div>
                 </div>
             </div>
-   
+
+            {{!-- Request to be a volunteer --}}
             <div class="col s12 m6">
                 <div class="card">
                     <div class="card-content grey-darken-3-text">
                         <span class="card-title">Become a Volunteer</span>
-                        <p>Volunteering will give you the chance to create the kind of community you would like to live in. You will
-                            meet new people who may later become your friend or colleague. You will provide meaningful connections
-                            to all within our community and give back to neighbors who need a little help. Our volunteer experiences
-                            are varied, so you will find something that will be a good fit for your availabilty and interests.</p>
+                        <p>Volunteering will give you the chance to create the kind of community you would like to live
+                            in. You will meet new people who may later become your friend or colleague. You will provide
+                            meaningful connections to all within our community and give back to neighbors who need a
+                            little help. Our volunteer experiences are varied, so you will find something that will be
+                            a good fit for your availabilty and interests.</p>
                     </div>
                     <div class="card-action">
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal2" id="volunteer-btn">Sign-up!</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal2"
+                            id="volunteer-btn">Sign-up!</a>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <div class="container" id="signup">
@@ -153,10 +160,6 @@
         <div class="row">
             <div class="hero-image" id="services-hero-image">
                 <p id="request_volunteer">Request services or volunteer today!</p>
-                {{!-- <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1" id="request">I need
-                    services</a>
-                <a class="waves-effect waves-light btn-large modal-trigger" href="#modal2" id="volunteer">I want to
-                    volunteer</a> --}}
             </div>
         </div>
     </div>
@@ -172,8 +175,8 @@
                     We see a world where all of our neighbors have access to supportive community,
                     one where everyone works together to help one another. Our mission is to enhance
                     the lives of those in need by offering our compassion, skills and services to all.
-                    Please fill out the short form below and our Volunteer Program Manager will be in 
-                    touch with you.  Thank you!
+                    Please fill out the short form below and our Volunteer Program Manager will be in
+                    touch with you. Thank you!
                 </h6>
             </div>
         </div>
@@ -260,74 +263,63 @@
                         </p>
                     </div>
                 </div>
-                <h4>Services</h4>
-                <h6>What services can we help you with?</h6>
+                <h4>Services Offered</h4>
+                <h6>What service can we help you with?</h6>
                 <p>
                     <label>
-                        <input id="transportation" type="checkbox" class="filled-in" />
+                        <input id="transportation" class="with-gap" name="transportation" type="radio" />
                         <span>Transportation</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="pet_care" type="checkbox" class="filled-in" />
+                        <input id="pet_care" class="with-gap" name="pet_care" type="radio" />
                         <span>Pet Care</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="babysitting" type="checkbox" class="filled-in" />
+                        <input id="babysitting" class="with-gap" name="babysitting" type="radio" />
                         <span>Babysitting</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="groceries" type="checkbox" class="filled-in" />
+                        <input id="groceries" class="with-gap" name="groceries" type="radio" />
                         <span>Groceries</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="errands" type="checkbox" class="filled-in" />
+                        <input id="errands" class="with-gap" name="errands" type="radio" />
                         <span>Errands</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="yardwork" type="checkbox" class="filled-in" />
+                        <input id="yardwork" class="with-gap" name="yardwork" type="radio" />
                         <span>Yardwork</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="housekeeping" type="checkbox" class="filled-in" />
+                        <input id="housekeeping" class="with-gap" name="housekeeping" type="radio" />
                         <span>Housekeeping</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="home_projects" type="checkbox" class="filled-in" />
+                        <input id="home_projects" class="with-gap" name="home_projects" type="radio" />
                         <span>Home Projects</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input id="movers" type="checkbox" class="filled-in" />
+                        <input id="movers" class="with-gap" name="movers" type="radio" />
                         <span>Movers</span>
                     </label>
                 </p>
-                <h6>Tell us a little bit about what you would like done.</h6>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Describe what you need</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <a class="modal-close waves-effect waves-light btn">Submit</a>
+                <a class="modal-close waves-effect waves-light btn" id="submit_request">Submit</a>
             </form>
         </div>
     </div>
@@ -341,10 +333,11 @@
             <div class="col s12">
                 <h6>
                     Volunteering will give you the chance to create the kind of community you would like to live in. By
-                    volunteering, you will meet new people who may later become your friend or colleague. As a volunteer, you 
-                    will provide meaningful connections to all within our community and give back to neighbors who need 
-                    a little help. Our volunteer experiences are varied, so you will find something that will be a good 
-                    fit for your availabilty and interests. If you think this is right for you, then please fill out 
+                    volunteering, you will meet new people who may later become your friend or colleague. As a
+                    volunteer, you
+                    will provide meaningful connections to all within our community and give back to neighbors who need
+                    a little help. Our volunteer experiences are varied, so you will find something that will be a good
+                    fit for your availabilty and interests. If you think this is right for you, then please fill out
                     the short form below and our Volunteer Program Manager will be in touch with you.
                     Thank you for your time!
                 </h6>
@@ -534,7 +527,7 @@
                     </label>
                 </p>
                 <br>
-                <a class="modal-close waves-effect waves-light btn">Submit</a>
+                <a class="modal-close waves-effect waves-light btn" id="submit_volunteer">Submit</a>
             </form>
         </div>
     </div>
