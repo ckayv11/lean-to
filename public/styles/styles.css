@@ -150,6 +150,11 @@ a {
    color: black;
 }
 
+.article-card {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .article-card, #first-nav, .card-panel {
   -webkit-box-shadow: none;
 }
