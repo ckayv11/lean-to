@@ -4,46 +4,46 @@
   <div class="container">
 
     {{!-- second "nav" --}}
-    <div class="row center-align" id="sec-nav" style="min-height: 30px;">
+    <div class="row center-align" style="min-height: 30px" id="sec-nav">
 
       <div class="mind">
         <div class="col s2">
-          <p>Mind & Body</p>
+          <a href="/categories">Mind & Body</a>
         </div>
       </div>
 
       <div class="love">
         <div class="col s2">
-          <p>Love & Intimacy</p>
+          <a href="/categories">Love & Intimacy</a>
         </div>
       </div>
 
       <div class="fertility">
         <div class="col s2">
-          <p>Fertility & Pregnancy</p>
+          <a href="/categories">Fertility & Pregnancy</a>
         </div>
       </div>
 
       <div class="family">
         <div class="col s2">
-          <p>Family & Parenting</p>
+          <a href="/categories">Family & Parenting</a>
         </div>
       </div>
 
       <div class="health">
         <div class="col s2">
-          <p>Women’s Health</p>
+          <a href="/categories">Women’s Health</a>
         </div>
       </div>
 
       <div class="work">
         <div class="col s2">
-          <p>Women in the Workplace</p>
+          <a href="/categories">Women in the Workplace</a>
         </div>
       </div>
 
     </div>
-  </div>
+</div>
 
   {{!-- slider --}}
   <div class="slider">
@@ -92,10 +92,12 @@
     {{!-- quote --}}
     <div class="row">
       <div class="col s12">
-        <h3>
+        <blockquote>
+        <h5>
           "One's life has value as long as one attributes value to the life of others, by means of love, friendship,
           indignation, and compassion." - Simone de Beauvoir
-        </h3>
+        </h5>
+        </blockquote>
       </div>
     </div>
 
@@ -150,65 +152,60 @@
     </div>
 
     {{!-- latest posts --}}
-    <div class="row center-align">
-      <div class="col s12 m4 l4"></div>
-      <div class="col s12 m4 l4">
-        <h3>
-          Latest Posts
-        </h3>
-      </div>
-      <div class="col s12 m12 l4"></div>
+<div class="row latest-posts">
+    <div class="col s12 center-align">
+        <h5>Latest Posts</h5>
+        <hr align="center" width="30%">
     </div>
+</div>
 
     {{!-- cards, content to be generated dynamically --}}
-    <div class="row latest-results">
-
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="images/sample-1.jpg">
-            <span class="card-title"></span>
-          </div>
-          <div class="card-content">
-            <p>Sample text</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Sample link</a>
-          </div>
+  <div class="row container results-body">
+    <div class="col m6 l4">
+      <a href="#" target="_blank">
+      <div class="card article-card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img src="/images/love-intimacy2.jpg">
+        </div>
+        <div class="card-content center-align">
+          <p>June 6, 2019</p><br>
+          <span class="card-title">Title</span>
+          <p>By Author Name</p>
         </div>
       </div>
-
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="images/sample-1.jpg">
-            <span class="card-title"></span>
-          </div>
-          <div class="card-content">
-            <p>Sample text</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Sample link</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="images/sample-1.jpg">
-            <span class="card-title"></span>
-          </div>
-          <div class="card-content">
-            <p>Sample text</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Sample link</a>
-          </div>
-        </div>
-      </div>
-
+      </a>
     </div>
+ 
+    <div class="col m6 l4">
+      <a href="#" target="_blank">
+      <div class="card article-card">
+        <div class="card-image">
+          <img src="/images/love-intimacy2.jpg">
+        </div>
+        <div class="card-content center-align">
+          <p>June 6, 2019</p><br>
+          <span class="card-title">Title</span>
+          <p>By Author Name</p>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <div class="col m6 l4">
+      <a href="#" target="_blank">
+      <div class="card article-card">
+        <div class="card-image">
+          <img src="/images/love-intimacy2.jpg">
+        </div>
+        <div class="card-content center-align">
+          <p>June 6, 2019</p><br>
+          <span class="card-title">Title</span>
+          <p>By Author Name</p>
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
 
     {{!-- example code below
     <div class="row">

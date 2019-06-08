@@ -1,3 +1,11 @@
+body, html {
+  color: rgb(105, 105, 105);
+}
+
+.container {
+  width: 85%;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -93,10 +101,9 @@ h1.main {
 }
 
 h3 {
-  font-family: serif;
   font-size: 24px;
-  border-top: rgba(105, 105, 105, 0.61) solid 1px;
-  border-bottom: rgba(105, 105, 105, 0.61) solid 1px;
+  /* border-top: rgba(105, 105, 105, 0.61) solid 1px;
+  border-bottom: rgba(105, 105, 105, 0.61) solid 1px; */
   padding: 10px 0 10px 0;
   color: rgb(105, 105, 105);
 }
@@ -115,39 +122,23 @@ a {
 #services {
   text-align: center;
   color: rgb(105, 105, 105);
-  border-top: rgb(105, 105, 105) solid 1px;
+  /* border-top: rgb(105, 105, 105) solid 1px; */
   padding-bottom: 10px;
 }
 
 #title {
-  color:black;
-  font-weight: bold;
-  text-align: right;
-}
-
-#title1 {
-  font-weight: bold;
-}
-
-#request_volunteer {
-  color: whitesmoke;
-  font-size: 30px;
+  background-color: white;
+  opacity: 0.65;
   text-align: center;
-  padding-top: 250px;
-  padding-bottom: 30px;
-  margin-right: 300px;
-}
-
-#request {
-  margin-right: 50px;
-  background-color: #FFFBE8;
-  color: black;
-}
-
-#volunteer {
-  margin-right: 300px;
-  background-color: #FFFBE8;
-  color: black;
+  padding: 35px 20px 0;
+  vertical-align: middle;
+  font-weight: 500;
+  color: rgb(59, 59, 59);;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
 /* modals */
@@ -157,6 +148,27 @@ a {
 
 .modal-content h6 {
    color: black;
+}
+
+.article-card, #first-nav, .card-panel {
+  -webkit-box-shadow: none;
+}
+
+    
+p, h6 {
+  height: 100%;
+  font-weight: 500;
+  font-family: 'Roboto', 'condensed';
+  font-style: normal;
+  line-height: 1.6;
+}
+
+h5 {
+  height: 100%;
+  font-weight: 500;
+  font-family: 'Roboto', 'condensed';
+  font-style: normal;
+  line-height: 1.3;
 }
 
 /* ==================================== footer ==================================== */
@@ -196,27 +208,41 @@ a {
   margin-top: 10px;
 }
 
-.hero-text {
-  background-color: #ffffff;
-  color: black;
-  border: 1px solid rgb(105, 105, 105);
-  opacity: 0.6;
+.hero-text h3 {
+  font-size: 40px;
+  background-color: #897a92a9;
+  color: whitesmoke;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding-right: 20px;
   padding-left: 20px;
-  height: 130px;
+  width: 50%;
 }
 
 #services-hero-image {
-  background-image: url('/images/laptops-signup.jpg');
-  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/laptops-signup.jpg');
+  height: 300px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   margin-top: 10px;
+}
+
+#request_volunteer {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  padding: 150px 0;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%,-50%);
+}
+
+#request-btn, #volunteer-btn {
+  background-color: #70597C;
 }

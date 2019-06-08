@@ -1,29 +1,23 @@
 <div id="services">
 
     {{!-- brand container --}}
+    <br>
+    <br>
     <div class="container">
         <div class="row center-align">
-            <div class="col s12">
-                <h1 class="main">Brand</h1>
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card">
+                        <img class="responsive-img" src="/images/services.jpg">
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="row center-align" style="min-height: 30px;"></div>
-
-        <div class="container">
-            <div class="col s12 m7">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="/images/services.jpg">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>We see a world where all of our neighbors have access to supportive community,
-                                one where everyone works together to help one another. Our mission is to enhance
-                                the lives of those in need by offering our compassion, skills and services to all.
-                                Please see the services we offer below.</p>
-                        </div>
-                    </div>
+            <div class="col s12 m6">
+                <div class="card-panel transparent">
+                    <h5>We see a world where all of our neighbors have access to supportive community,
+                        one where everyone works together to help one another. Our mission is to enhance
+                        the lives of those in need by offering our compassion, skills and services to all.
+                        Please see the services we offer below.</h5>
                 </div>
             </div>
         </div>
@@ -32,9 +26,8 @@
     <div class="container" id="explore_services">
         <div class="row">
             <div class="col s12" id="services">
-                <h5>
-                    Explore Services
-                </h5>
+                <h5>Explore Services</h5>
+                <hr align="center" width="30%">
             </div>
         </div>
 
@@ -44,7 +37,7 @@
                 <div class="card" id="service_image">
                     <div class="card-image">
                         <img src="/images/babysitting.jpg">
-                        <span class="card-title" id="title1">Babysitting</span>
+                        <span class="card-title" id="title">Babysitting</span>
                     </div>
                 </div>
             </div>
@@ -52,7 +45,7 @@
                 <div class="card" id="service_image">
                     <div class="card-image">
                         <img src="/images/errands2.jpg">
-                        <span class="card-title" id="title1">Errands</span>
+                        <span class="card-title" id="title">Errands</span>
                     </div>
                 </div>
             </div>
@@ -60,7 +53,7 @@
                 <div class="card" id="service_image">
                     <div class="card-image">
                         <img src="/images/groceries2.jpg">
-                        <span class="card-title" id="title1">Groceries</span>
+                        <span class="card-title" id="title">Groceries</span>
                     </div>
                 </div>
             </div>
@@ -96,7 +89,7 @@
                 <div class="card" id="service_image">
                     <div class="card-image">
                         <img src="/images/transportation.jpg">
-                        <span class="card-title" id="title1">Transportation</span>
+                        <span class="card-title" id="title">Transportation</span>
                     </div>
                 </div>
             </div>
@@ -104,7 +97,7 @@
                 <div class="card" id="service_image">
                     <div class="card-image">
                         <img src="/images/yardwork2.jpg">
-                        <span class="card-title" id="title1">Yardwork</span>
+                        <span class="card-title" id="title">Yardwork</span>
                     </div>
                 </div>
             </div>
@@ -112,11 +105,45 @@
                 <div class="card" id="service_image">
                     <div class="card-image">
                         <img src="/images/moving.jpg">
-                        <span class="card-title" id="title1">Movers</span>
+                        <span class="card-title" id="title">Movers</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
+    </div>
+
+    <div class="row container">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content grey-darken-3-text">
+                        <span class="card-title">Request Assistance</span>
+                        <p>Our job is to raise awareness and advocate for women's health and safety. With this in mind,
+                            we aim to provide a safe environment for you to ask for assistance from your community through
+                            careful vetting of our volunteers and our app advanced technology that protects you and keeps you connected
+                            with our team. Whether you need your lawn mowed or someone to pick up your groceries, we are here to help!</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1" id="request-btn">Sign-up!</a>
+                    </div>
+                </div>
+            </div>
+   
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content grey-darken-3-text">
+                        <span class="card-title">Become a Volunteer</span>
+                        <p>Volunteering will give you the chance to create the kind of community you would like to live in. You will
+                            meet new people who may later become your friend or colleague. You will provide meaningful connections
+                            to all within our community and give back to neighbors who need a little help. Our volunteer experiences
+                            are varied, so you will find something that will be a good fit for your availabilty and interests.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal2" id="volunteer-btn">Sign-up!</a>
+                    </div>
+                </div>
+            </div>
+            </div>
     </div>
 
     <div class="container" id="signup">
@@ -126,10 +153,10 @@
         <div class="row">
             <div class="hero-image" id="services-hero-image">
                 <p id="request_volunteer">Request services or volunteer today!</p>
-                <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1" id="request">I need
+                {{!-- <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1" id="request">I need
                     services</a>
                 <a class="waves-effect waves-light btn-large modal-trigger" href="#modal2" id="volunteer">I want to
-                    volunteer</a>
+                    volunteer</a> --}}
             </div>
         </div>
     </div>
@@ -314,10 +341,10 @@
             <div class="col s12">
                 <h6>
                     Volunteering will give you the chance to create the kind of community you would like to live in. By
-                    volunteering, you will meet new people who may later become your friend or boss. As a volunteer you 
+                    volunteering, you will meet new people who may later become your friend or colleague. As a volunteer, you 
                     will provide meaningful connections to all within our community and give back to neighbors who need 
                     a little help. Our volunteer experiences are varied, so you will find something that will be a good 
-                    fit for your available time and interests. If you think this is right for you, then please fill out 
+                    fit for your availabilty and interests. If you think this is right for you, then please fill out 
                     the short form below and our Volunteer Program Manager will be in touch with you.
                     Thank you for your time!
                 </h6>
@@ -506,6 +533,7 @@
                         <span>Movers</span>
                     </label>
                 </p>
+                <br>
                 <a class="modal-close waves-effect waves-light btn">Submit</a>
             </form>
         </div>
