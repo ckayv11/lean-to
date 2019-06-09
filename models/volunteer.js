@@ -1,10 +1,16 @@
 module.exports = function (sequelize, DataTypes) {
     var Volunteer = sequelize.define("Volunteer", {
-        availability: DataTypes.BOOLEAN,
-        allowNull: false,
-        validate: {
-            len: [0]
+        availability: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            validate: [1]
         }
+        // validate, type and allowsNull have to be wrapped in an object
+        // availability: DataTypes.BOOLEAN,
+        // allowNull: false,
+        // validate: {
+        //     len: [0]
+        // }
     });
 
     // We're saying that a Volunteer should belong to a User

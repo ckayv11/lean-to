@@ -6,8 +6,8 @@ module.exports = function(sequelize, DataTypes) {
         address_2: DataTypes.STRING,
         city: DataTypes.STRING,
         state: DataTypes.STRING,
-        zip_code: DataTypes.INT,
-        phone_number: DataTypes.INT,
+        zip_code: DataTypes.INTEGER,
+        phone_number: DataTypes.INTEGER,
         email: DataTypes.STRING,
         date_of_birth: DataTypes.DATE,
         gender: DataTypes.BOOLEAN
@@ -18,5 +18,6 @@ module.exports = function(sequelize, DataTypes) {
             onDelete: "cascade"
         });
     };
+
     return User;
 };
