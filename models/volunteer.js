@@ -3,7 +3,9 @@ module.exports = function (sequelize, DataTypes) {
         availability: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            validate: [1]
+            validate: {
+                len: [1]
+            }
         }
         // validate, type and allowsNull have to be wrapped in an object
         // availability: DataTypes.BOOLEAN,
@@ -22,5 +24,6 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
     };
+
     return Volunteer;
 };

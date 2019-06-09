@@ -1,7 +1,32 @@
 var db = require("../models");
 var axios = require("axios");
 var moment = require('moment');
+
 module.exports = function(app) {
+
+  // Get all volunteers
+  app.get("/api/volunteers", function(req, res) {
+    db.Volunteer.findAll({}).then(function(dbVolunteers) {
+      res.json(dbVolunteers);
+    });
+  });
+
+  // Create new Volunteer
+  app.post("/api/volunteers", function(req, res) {
+    db.Volunteer.create(req.body).then(function(dbVolunteers) {
+      res.json(dbVolunteers);
+    });
+  });
+
+  // Delete Volunteer
+  app.delete("/api/volunteers/:id", function(req, res) {
+    db.Volunteer.destroy({ where: { id: req.params.id } })
+      .then(function(dbVolunteers) {
+        res.json(dbVolunteers);
+      });
+  });
+
+  // EXAMPLES start =================================================
   // Get all examples
   app.get("/api/examples", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
@@ -22,6 +47,7 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+  // EXAMPLES end ==================================================
 
     // Get articles by category
     app.get("/api/categories/:category", function(req, res) {
