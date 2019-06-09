@@ -1,5 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Volunteer = sequelize.define("Volunteer", {
+        vol_name: DataTypes.STRING,
         availability: {
             type: DataTypes.BOOLEAN,
             allowNull: false,

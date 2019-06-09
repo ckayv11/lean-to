@@ -533,5 +533,30 @@
     </div>
 </div>
 
+{{!-- List of volunteers --}}
+    <div class="row">
+      <div class="col-8 offset-2">
+        {{!-- <h1>{{msg}}</h1>
+        <h2>This is our Home Page!</h2> --}}
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="vol_name">Volunteer Name</label>
+            <input type="text" id="vol_name" class="form-control" aria-describedby="vol_name"
+              placeholder="Enter your name...">
+          </div>
+          <button id="submit_volunteer" class="btn btn-primary float-right">Submit</button>
+        </form>
+        <h3>Volunteers:</h3>
+        <ul id="volunteer-list" class="list-group">
+          {{#each volunteers}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.vol_name}}, {{this.availabilty}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
 <script src="https://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="/js/services.js"></script>

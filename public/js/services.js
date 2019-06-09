@@ -1,98 +1,99 @@
 $(document).ready(function () {
     // ref to input fields in html
     var firstNameInput = $("#first_name");
-    var volList = $("#volunteer");
+    var volList = $("#volunteer-list");
     // var volModalContent = ("#modal2");
 
-    // event listeners
-    // $(document).on("submit_volunteer", "#volunteer", volunteerFormSubmit);
-    $("#submit_volunteer").on("click", volunteerFormSubmit);
-    $("#delete_user").on("click", handleDeleteButton);
+    // The API object contains methods for each kind of request we'll make
+    var API = {
+        saveVolunteer: function (volunteer) {
+            return $.ajax({
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                type: "POST",
+                url: "api/volunteers",
+                data: JSON.stringify(volunteer)
+            });
+        },
+        getVolunteers: function () {
+            return $.ajax({
+                url: "api/volunteers",
+                type: "GET"
+            });
+        },
+        deleteVolunteers: function (id) {
+            return $.ajax({
+                url: "api/volunteers/" + id,
+                type: "DELETE"
+            });
+        }
+    };
 
-    listVolunteers();
+    // refreshVolunteers gets new volunteers from the db and repopulates the list
+    var refreshVolunteers = function () {
+        API.getVolunteers().then(function (data) {
+            var $volunteers = data.map(function (volunteer) {
+                var $a = $("<a>")
+                    .text(volunteer.vol_name)
+                    .attr("href", "/volunteer/" + volunteer.id);
+
+                var $li = $("<li>")
+                    .attr({
+                        class: "list-group-item",
+                        "data-id": volunteer.id
+                    })
+                    .append($a);
+
+                var $button = $("<button>")
+                    .addClass("btn btn-danger float-right delete")
+                    .text("ｘ");
+
+                $li.append($button);
+
+                return $li;
+            });
+
+            $volList.empty();
+            $volList.append($volunteers);
+        });
+    };
 
     // func to handle volunteer form submission
     function volunteerFormSubmit(event) {
         event.preventDefault();
 
-        if (!firstNameInput.val().trim()) {
-            // return;
+        var volunteer = {
+            vol_name: $firstNameInput.val().trim()
+        }
+
+        if (!firstNameInput) {
+            alert("You must enter your name!");
+            return;
+
             console.log("add first name");
         }
 
-        createVolunteer({
-            first_name: firstNameInput.val().trim()
-        });
-    };
+        API.saveVolunteer(volunteer)
+            .then(function () {
+                refreshVolunteers();
+            });
 
-    // func to create volunteer
-    function createVolunteer(volData) {
-        $.post("/admin", volData)
-            .then(listVolunteers);
-    };
-
-    // create new row in html for the added volunteer
-    function createVolRow(volData) {
-        var newRow = $("<tr>");
-        newRow.data("volunteer", volData);
-        newRow.append("<td>" + volData.first_name + "</td>");
-
-        if (volData.Users) {
-            newRow.append("<td>" + volData.Users.length + "</td");
-        }
-        else {
-            newRow.append("<td>0</td>");
-        }
-        newRow.append("<td><a href='/admin?user_id=" + volData.id + "'>Go to volunteers Page</a></td>");
-        newRow.append("<td><a style='cursor:pointer;color:red' class='delete_user'>Delete User</a></td>");
-        return newRow;
-    };
-
-    // Function for retrieving volunteers and getting them ready to be rendered to the page
-    function listVolunteers() {
-        $.get("/api/admin", function (data) {
-            var rowsToAdd = [];
-            for (var i = 0; i < data.length; i++) {
-                rowsToAdd.push(createVolRow(data[i]));
-            }
-            renderVolList(rowsToAdd);
-            firstNameInput.val("");
-        });
-    }
-
-    // func to render list of volunteers to the page
-    function renderVolList(rows) {
-        volList.children().not(":last").remove();
-        // volModalContent.children(".alert").remove();
-        
-        if (rows.length) {
-            // console.log(rows);
-            volList.prepend(rows);
-        }
-        else {
-            renderNoVols();
-        }
-    };
-
-    // handle empty render
-    function renderNoVols() {
-        var alertDiv = $("<div>");
-
-        alertDiv.addClass("alert");
-        alertDiv.text("You must create a User account.");
-        // volModalContent.append(alertDiv);
+        $firstNameInput.val("");
     };
 
     // handle what happens when delete button pressed
     function handleDeleteButton() {
-        var listItemData = $(this).parent("td").parent("tr").data("user");
-        var id = listItemData.id;
+        var idToDelete = $(this).parent().attr("data-id");
 
-        $.ajax({
-            method: "DELETE",
-            url: "/api/users/" + id
-        })
-            .then(listVolunteers);
+        API.deleteVolunteers(idToDelete)
+            .then(function () {
+                refreshVolunteers();
+            });
     };
+
+    // event listeners
+    $("#submit_volunteer").on("click", volunteerFormSubmit);
+    $("#delete_user").on("click", handleDeleteButton);
 
 });
