@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Volunteer = sequelize.define("Volunteer", {
         availability: DataTypes.BOOLEAN,
         allowNull: false,
@@ -6,8 +6,10 @@ module.exports = function(sequelize, DataTypes) {
             len: [0]
         }
     });
-    
-    Volunteer.associate = function(models) {
+
+    // We're saying that a Volunteer should belong to a User
+    // A Volunteer can't be created without a User due to the foreign key constraint
+    Volunteer.associate = function (models) {
         Volunteer.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
