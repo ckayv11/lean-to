@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // ref to input fields in html
-    var firstNameInput = $("#first_name");
-    var volList = $("#volunteer-list");
+    var $firstNameInput = $("#vol_name");
+    var $volList = $("#volunteer-list");
     // var volModalContent = ("#modal2");
 
     // The API object contains methods for each kind of request we'll make
@@ -66,8 +66,9 @@ $(document).ready(function () {
         var volunteer = {
             vol_name: $firstNameInput.val().trim()
         }
+        console.log(volunteer);
 
-        if (!firstNameInput) {
+        if (!(volunteer.vol_name)) {
             alert("You must enter your name!");
             return;
 
