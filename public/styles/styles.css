@@ -13,12 +13,16 @@ body, html {
 #logo-main {
   display: inline-block;
   max-width:180px;
-  /* max-height:95px; */
   width: auto;
   height: auto;
 }
 
-/* ==================================== nav styling ==================================== */
+#logo_display {
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+/* ==================================== Nav Styling ==================================== */
 #first-nav {
   background-color: #FFFBE8;
   height: 40px;
@@ -53,7 +57,6 @@ nav ul a:hover {
 
 nav ul.left {
   padding-left: 20px;
-  /* margin: 0 auto; */
 }
 
 nav ul.right {
@@ -64,7 +67,7 @@ li {
   height: 50px;
 }
 
-/* ==================================== slider ==================================== */
+/* ==================================== Slider ==================================== */
 .slider {
   margin: 20px 0 20px 0;
   clear: left;
@@ -90,7 +93,7 @@ li {
   border-bottom: transparent;
 }
 
-/* ==================================== headers ==================================== */
+/* ==================================== Headers ==================================== */
 h1 {
   margin: 0 auto;
 }
@@ -102,13 +105,11 @@ h1.main {
 
 h3 {
   font-size: 24px;
-  /* border-top: rgba(105, 105, 105, 0.61) solid 1px;
-  border-bottom: rgba(105, 105, 105, 0.61) solid 1px; */
   padding: 10px 0 10px 0;
   color: rgb(105, 105, 105);
 }
 
-/* ==================================== etc. ==================================== */
+/* ==================================== Etc. ==================================== */
 a {
   color: rgb(105, 105, 105);
 }
@@ -125,43 +126,22 @@ a {
   padding-bottom: 10px;
 }
 
-#title {
+.title {
   background-color: white;
   opacity: 0.65;
   text-align: center;
-  padding: 35px 20px 0;
+  padding: 20px 20px 20px 20px;
   vertical-align: middle;
   font-weight: 500;
   color: rgb(59, 59, 59);;
   position: absolute;
+  height: fit-content;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
 
-/* modals */
-.modal-content h4 {
-  color: rgb(105, 105, 105);
-}
-
-.modal-content h6 {
-   color: black;
-}
-
-.article-card {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.article-card, #first-nav, .card-panel {
-  -webkit-box-shadow: none;
-}
-
-.modal-close {
-  background-color: #70597C;
-}
-    
 p, h6 {
   height: 100%;
   font-weight: 500;
@@ -178,16 +158,53 @@ h5 {
   line-height: 1.3;
 }
 
-/* ==================================== footer ==================================== */
-/* .page-footer {
-  background-color: #FFFBE8;
-  padding-top: 0;
+#first-nav, .card-panel, .concept-card {
+  -webkit-box-shadow: none;
 }
 
-.footer-copyright {
-  color: rgb(105, 105, 105) !important;
-} */
+.article-card {
+  margin-bottom: 50px;
+  -webkit-box-shadow: none;
+}
 
+.article-card p {
+  font-size: 12px;
+}
+
+.article-card h6 {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+#request_volunteer {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  padding: 150px 0;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%,-50%);
+}
+
+#request-btn, #volunteer-btn {
+  background-color: #70597C;
+}
+
+/* ==================================== Modal ==================================== */
+.modal-close {
+  background-color: #70597C;
+}
+
+.modal-content h6 {
+  color: black;
+}
+
+.modal-content h4 {
+  color: rgb(105, 105, 105);
+}
+
+/* ==================================== Footer ==================================== */
 .footer {
   left: 0;
   bottom: 0;
@@ -205,7 +222,7 @@ h5 {
 }
 
 /* ==================================== Hero Banner ==================================== */
-#categories-hero-image {
+/* #categories-hero-image {
   background-image: url('../images/womens-health.jpg');
   height: 400px;
   background-position: center;
@@ -213,6 +230,28 @@ h5 {
   background-size: cover;
   position: relative;
   margin-top: 10px;
+} */
+
+#categories-image-section {
+  margin-top: 10px;
+  position: relative;
+  height: 50%;
+  width: 100%;
+}
+
+#categories-image-banner, #categories-image-banner2 {
+  width: 100%;
+  height: 400px;
+}
+
+#image-div1 {
+  padding-left: 0;
+  padding-right: 1px;
+}
+
+#image-div2 {
+  padding-right: 0;
+  padding-left: 1px;
 }
 
 #admin-hero-image {
@@ -260,6 +299,14 @@ h5 {
   transform: translate(-50%,-50%);
 }
 
-#request-btn, #volunteer-btn {
+#request-btn, #volunteer-btn, #card-btn {
   background-color: #70597C;
+}
+
+#article-icon, #service-icon, #community-icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

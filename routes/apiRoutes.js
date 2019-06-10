@@ -49,7 +49,29 @@ module.exports = function(app) {
   });
   // EXAMPLES end ==================================================
 
-    // Get articles by category
+
+// ------------ Categories API Routes ------------//  
+  // Get random articles when category page is loaded
+  app.get("/categories", function(req, res) {
+    const currentDate = moment().format('YYYY-MM-DD');
+    var queryURL = 'https://newsapi.org/v2/everything?' +
+      'q=feminism' +
+      '&from=' + currentDate +
+      'sortBy=relevance&' +
+      'language=en&' +
+      'apiKey=7901a57d723f41f19a8842e99327ab2e';
+    // axios call to get api based on the category
+    axios.get(queryURL).then(function(result) {
+      console.log(result);
+      var resultData = result.data.articles;
+      for (i = 0; i < resultData.length; i++) {
+        resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+      }
+      res.render("categories", {result: resultData})
+    });
+  });  
+
+  // Get articles by specific category
     app.get("/api/categories/:category", function(req, res) {
       const category = req.params.category;
       const currentDate = moment().format('YYYY-MM-DD');
@@ -57,19 +79,60 @@ module.exports = function(app) {
         'q=' + category +
         '&from=' + currentDate +
         'sortBy=relevance&' +
+        'language=en&' +
         'apiKey=7901a57d723f41f19a8842e99327ab2e';
       // axios call to get api based on the category
       axios.get(queryURL).then(function(result) {
         console.log(result);
-        var resultDate = result.data.articles;
-        for (i = 0; i < resultDate.length; i++) {
-          resultDate[i].publishedAt = moment(resultDate[i].publishedAt).format("LL");
+        var resultData = result.data.articles;
+        for (i = 0; i < resultData.length; i++) {
+          resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
         }
-        res.render("categories", {result: resultDate})
+        res.render("categories", {result: resultData})
       });
-      // .catch(function(error) {
-      //   console.log(error);
-      // };
+    });
+
+// ------------ Index API Routes ------------//  
+  
+  // Get latest posts
+  app.get("/", function(req, res) {
+    const currentDate = moment().format('YYYY-MM-DD');
+    var queryURL = 'https://newsapi.org/v2/everything?' +
+      'q=female+leaders' +
+      '&from=' + currentDate +
+      'sortBy=relevance&' +
+      'language=en&' +
+      'apiKey=7901a57d723f41f19a8842e99327ab2e';
+    // axios call to get api based on the category
+    axios.get(queryURL).then(function(result) {
+      console.log(result);
+      var resultData = result.data.articles;
+      for (i = 0; i < resultData.length; i++) {
+        resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+      }
+      res.render("index", {result: resultData})
+    });
+  });
+
+    // Get articles by specific category
+    app.get("/api/index/:category", function(req, res) {
+      const category = req.params.category;
+      const currentDate = moment().format('YYYY-MM-DD');
+      var queryURL = 'https://newsapi.org/v2/everything?' +
+        'q=' + category +
+        '&from=' + currentDate +
+        'sortBy=relevance&' +
+        'language=en&' +
+        'apiKey=7901a57d723f41f19a8842e99327ab2e';
+      // axios call to get api based on the category
+      axios.get(queryURL).then(function(result) {
+        console.log(result);
+        var resultData = result.data.articles;
+        for (i = 0; i < resultData.length; i++) {
+          resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+        }
+        res.render("categories", {result: resultData})
+      });
     });
 
 };
