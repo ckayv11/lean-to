@@ -103,26 +103,38 @@ $(document).ready(function () {
     $("#volunteer-chosen").on("click", function() {
         console.log("clicked");
 
-        var interests = ["transporation", "pet care"];
+        var interests = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
 
         for (var i = 0; i < interests.length; i++) {
+            console.log(interests[i]);
+
+            var interestPara = $("<p>");
             var interestLabel = $("<label>");
-            var interestCheckmark = $("<input>");
+            var interestInput = $("<input />");
             var interestSpan = $("<span>");
-            console.log(interestCheckmark[0]);
+            // var interestSpan = $("<span>");
+            // console.log(interestInput[0]);
+            
+            interestPara.addClass("append-label");
+            interestPara.attr("data-para", interests[i]);
 
-            interestLabel.addClass("user-needs");
-
-            interestCheckmark.attr("id", interests[i]);
-            interestCheckmark.attr("type", "checkbox");
-            interestCheckmark.addClass("filled-in");
-
+            interestLabel.addClass("append-input");
+            
+            interestInput.addClass("filled-in append");            
+            interestInput.attr("type", "checkbox");            
+            interestInput.attr("data-input", interests[i]);            
+            
+            interestSpan.addClass("user-needs");
+            interestSpan.attr("data-span", interests[i]);
             interestSpan.text(interests[i]);
+            // interestSpan.text(interests[i]);
 
-            $("filled-in").append(interestSpan);
-            $(".user-needs").append(interestCheckmark);
-            $("#append-radios-checkmarks").append(interestLabel);
+            $("#append-radios-checkmarks").append(interestPara);
+            $(".append-label").append(interestLabel);
+            $("#append-radios-checkmarks").append(interestInput);
+            $("#append-radios-checkmarks").append(interestSpan); 
         }
+
     });
 
 });
