@@ -130,9 +130,8 @@ $(document).ready(function () {
             // interestSpan.text(interests[i]);
 
             $("#append-radios-checkmarks").append(interestPara);
-            $(".append-label").append(interestLabel);
-            $("#append-radios-checkmarks").append(interestInput);
-            $("#append-radios-checkmarks").append(interestSpan); 
+            $("#append-radios-checkmarks").append(interestSpan);
+            
         }
 
     });
