@@ -7,6 +7,10 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
+        },
+        role: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         }
         // validate, type and allowsNull have to be wrapped in an object
         // availability: DataTypes.BOOLEAN,

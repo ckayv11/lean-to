@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // ref to input fields in html
-    var $firstNameInput = $("#vol_name");
+    var $firstNameInput = $("#vol-name");
     var $volList = $("#volunteer-list");
     // var volModalContent = ("#modal2");
 
@@ -96,5 +96,33 @@ $(document).ready(function () {
     // event listeners
     $("#submit_volunteer").on("click", volunteerFormSubmit);
     $("#delete_user").on("click", handleDeleteButton);
+
+    // Adding on click events for volunteer-chosen and request-services-chosen radios to then...
+    // display the appropriate radio/checkmark booleans (volunteers can have multiple interests...
+    // and requesters can have only one request);
+    $("#volunteer-chosen").on("click", function() {
+        console.log("clicked");
+
+        var interests = ["transporation", "pet care"];
+
+        for (var i = 0; i < interests.length; i++) {
+            var interestLabel = $("<label>");
+            var interestCheckmark = $("<input>");
+            var interestSpan = $("<span>");
+            console.log(interestCheckmark[0]);
+
+            interestLabel.addClass("user-needs");
+
+            interestCheckmark.attr("id", interests[i]);
+            interestCheckmark.attr("type", "checkbox");
+            interestCheckmark.addClass("filled-in");
+
+            interestSpan.text(interests[i]);
+
+            $("filled-in").append(interestSpan);
+            $(".user-needs").append(interestCheckmark);
+            $("#append-radios-checkmarks").append(interestLabel);
+        }
+    });
 
 });
