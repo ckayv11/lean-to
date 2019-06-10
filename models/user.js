@@ -10,7 +10,8 @@ module.exports = function(sequelize, DataTypes) {
         phone_number: DataTypes.INTEGER,
         email: DataTypes.STRING,
         date_of_birth: DataTypes.DATE,
-        gender: DataTypes.BOOLEAN
+        gender: DataTypes.BOOLEAN,
+        role: DataTypes.BOOLEAN
     });
 
     User.associate = function(models) {
