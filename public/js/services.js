@@ -100,13 +100,18 @@ $(document).ready(function () {
     // Adding on click events for volunteer-chosen and request-services-chosen radios to then...
     // display the appropriate radio/checkmark booleans (volunteers can have multiple interests...
     // and requesters can have only one request);
-    $("#volunteer-chosen").on("click", function() {
+
+   $("#volunteer-chosen").on("click", function(e) {
         console.log("clicked");
 
-        var interests = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
+        var interestsArray = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
+        var $interestOptions = $("#append-radios-checkmarks");
 
-        for (var i = 0; i < interests.length; i++) {
-            console.log(interests[i]);
+        $interestOptions.empty();
+        e.preventDefault();
+
+        for (var i = 0; i < interestsArray.length; i++) {
+            console.log(interestsArray[i]);
 
             var interestPara = $("<p>");
             var interestLabel = $("<label>");
@@ -116,24 +121,30 @@ $(document).ready(function () {
             // console.log(interestInput[0]);
             
             interestPara.addClass("append-label");
-            interestPara.attr("data-para", interests[i]);
+            interestPara.attr("data-para", interestsArray[i]);
 
             interestLabel.addClass("append-input");
             
             interestInput.addClass("filled-in append");            
             interestInput.attr("type", "checkbox");            
-            interestInput.attr("data-input", interests[i]);            
+            interestInput.attr("data-input", interestsArray[i]);            
             
             interestSpan.addClass("user-needs");
-            interestSpan.attr("data-span", interests[i]);
-            interestSpan.text(interests[i]);
+            interestSpan.attr("data-span", interestsArray[i]);
+            interestSpan.text(interestsArray[i]);
             // interestSpan.text(interests[i]);
 
+            interestLabel.append(interestInput);
+            interestLabel.append(interestSpan);
+            interestPara.append(interestLabel);
             $("#append-radios-checkmarks").append(interestPara);
-            $("#append-radios-checkmarks").append(interestSpan);
+            // $("#append-radios-checkmarks").append(interestSpan);
             
         }
+});
 
-    });
+$("#request-services-chosen").on("click", function(e) {
+    //.
+});
 
 });
