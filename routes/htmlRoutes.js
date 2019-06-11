@@ -41,12 +41,22 @@ module.exports = function (app) {
     });
   });
 
+  // Load user page and pass in a user by id
+  app.get("/user/:id", function (req, res) {
+    db.User.findOne({ where: { id: req.params.id } })
+      .then(function (dbUser) {
+        res.render("user", {
+          user: dbUser
+        });
+      });
+  });
+
   // Load volunteer page and pass in an volunteer by id
   app.get("/volunteer/:id", function (req, res) {
     db.Volunteer.findOne({ where: { id: req.params.id } })
       .then(function (dbVolunteer) {
         res.render("volunteer", {
-          Volunteer: dbVolunteer
+          volunteer: dbExample
         });
       });
   });

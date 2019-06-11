@@ -161,10 +161,10 @@
     <br>
     <h4>Contact Information</h4>
     <div class="row">
-        <form class="col s12" id="user-form">
+        <form class="col s12" id="user-form" action="POST">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Jane" id="user-first-name" type="text" class="validate">
+                    <input placeholder="Jane" id="user-first-name" type="text" class="validate" aria-describedby="user-first-name">
                     <label for="user-first-name">First Name: </label>
                 </div>
                 <div class="input-field col s6">
@@ -270,47 +270,60 @@
 {{!-- List of all Users --}}
 
 <div class="row">
-    <div class="col-8 offset-2">
-        <form class="clearfix mb-4" action="POST">
+    <div class="col s12">
+
+        {{!-- <form class="clearfix s12" action="POST">
             <div class="form-group">
                 <label for="user-name">User Name</label>
                 <input type="text" id="user-name" class="form-control" aria-describedby="first_name"
                     placeholder="Enter your name...">
             </div>
             <button id="submit_user" class="btn btn-primary float-right">Submit</button>
-        </form>
+        </form> --}}
+
         <h3>Users:</h3>
-        <ul id="volunteer-list" class="list-group">
+        <ul id="users-list" class="list-group">
             {{#each users}}
-            <li data-id="{{this.id}}" class="list-group-item">
+            <li data-user-id="{{this.id}}" class="list-group-item">
                 <a href="example/{{this.id}}">{{this.first_name}} {{this.last_name}}</a>
                 <button class="btn btn-danger float-right delete">ｘ</button>
             </li>
             {{/each}}
         </ul>
+
     </div>
 </div>
 
-{{!-- List of volunteers --}}
-
-{{!-- <div class="row">
-    <div class="col-8 offset-2">
+    {{!-- example code below --}}
+    {{!-- <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" action="POST">
-            <div class="form-group">
-                <label for="vol-name">Volunteer Name</label>
-                <input type="text" id="vol-name" class="form-control" aria-describedby="vol-name"
-                    placeholder="Enter your name...">
-            </div>
-            <button id="submit_volunteer" class="btn btn-primary float-right">Submit</button>
+          <div class="form-group">
+            <label for="example-text">Example Text</label>
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
+              placeholder="Enter Example Text">
+          </div>
+          <div class="form-group">
+            <label for="example-description">Example Description</label>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description"
+              placeholder="Enter Example Description"></textarea>
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Volunteers:</h3>
-        <ul id="volunteer-list" class="list-group">
-            {{#each volunteers}}
-            <li data-id="{{this.id}}" class="list-group-item">
-                <a href="example/{{this.id}}">{{this.vol_name}}, {{this.availabilty}}</a>
-                <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
+        
+        <h3>Examples:</h3>
+        <ul id="example-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
         </ul>
-    </div>
-</div> --}}
+      </div>
+    </div> --}}
+
+
+{{!-- List of volunteers --}}
