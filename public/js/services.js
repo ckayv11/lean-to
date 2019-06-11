@@ -68,7 +68,7 @@ var refreshUsers = function () {
     API.getUsers().then(function (data) {
         var $users = data.map(function (user) {
             var $a = $("<a>")
-                .text(user.id)
+                .text(user.first_name)
                 .attr("href", "/user/" + user.id);
 
             var $li = $("<li>")
@@ -114,9 +114,9 @@ var handleUserSubmit = function (event) {
         refreshUsers();
     });
 
-    $userFirst.val("");
+    // $userFirst.val("");
     console.log($userFirst + "after val clear");
-    $userLast.val("");
+    // $userLast.val("");
 };
 
 var handleUserDelete = function () {

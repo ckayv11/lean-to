@@ -28,8 +28,23 @@ module.exports = function(app) {
   });
 
   // Create new User
-  app.post("/api/users", function(req, res) {
-    db.User.create(req.body).then(function(dbUser) {
+  // app.post("/api/users", function (req, res) {
+  //   db.User.create({
+  //     first_name: req.body.first_name
+  //   },
+  //     {
+  //       last_name: req.body.last_name
+  //     }).then(function (dbUser) {
+  //       res.json(dbUser);
+  //     });
+  // });
+
+// Create new User
+  app.post("/api/users", function (req, res) {
+    db.User.create(
+      { first_name: req.body.first_name },
+      { last_name: req.body.last_name }
+    ).then(function (dbUser) {
       res.json(dbUser);
     });
   });
