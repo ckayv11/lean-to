@@ -222,15 +222,15 @@ h5 {
 }
 
 /* ==================================== Hero Banner ==================================== */
-/* #categories-hero-image {
-  background-image: url('../images/womens-health.jpg');
+#categories-hero-image {
+  background-image: url('../images/parenting.jpg');
   height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   margin-top: 10px;
-} */
+}
 
 #categories-image-section {
   margin-top: 10px;
