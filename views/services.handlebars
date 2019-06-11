@@ -164,7 +164,7 @@
         <form class="col s12" id="user-form" action="POST">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Jane" id="user-first-name" type="text" class="validate" aria-describedby="user-first-name">
+                    <input placeholder="Jane" id="user-first-name" type="text" class="validate">
                     <label for="user-first-name">First Name: </label>
                 </div>
                 <div class="input-field col s6">
@@ -284,9 +284,9 @@
         <h3>Users:</h3>
         <ul id="users-list" class="list-group">
             {{#each users}}
-            <li data-user-id="{{this.id}}" class="list-group-item">
-                <a href="example/{{this.id}}">{{this.first_name}} {{this.last_name}}</a>
-                <button class="btn btn-danger float-right delete">ｘ</button>
+            <li data-user-id="{{this.id}}" class="list-user-item">
+                <a href="user/{{this.id}}">{{this.first_name}} {{this.last_name}}</a>
+                <button class="btn btn-danger float-right delete-user">ｘ</button>
             </li>
             {{/each}}
         </ul>
@@ -327,3 +327,4 @@
 
 
 {{!-- List of volunteers --}}
+

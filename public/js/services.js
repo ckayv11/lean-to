@@ -5,10 +5,10 @@ var $volFirstName = $("#vol-name");
 var $volList = $("#volunteer-list");
 
 var $userList = $("#users-list");
-var $userFirst = $(".user-first-name");
-var $userLast = $(".user-last-name");
-var $userRole = $("role");
-var $userActivity = $("activity");
+var $userFirst = $("#user-first-name");
+var $userLast = $("#user-last-name");
+// var $userRole = $("role");
+// var $userActivity = $("activity");
 
 // Get initial list of Users
 // getUsers();
@@ -68,12 +68,12 @@ var refreshUsers = function () {
     API.getUsers().then(function (data) {
         var $users = data.map(function (user) {
             var $a = $("<a>")
-                .text(user.first_name)
+                .text(user.id)
                 .attr("href", "/user/" + user.id);
 
             var $li = $("<li>")
                 .attr({
-                    class: "list-group-item",
+                    class: "list-user-item",
                     "data-user-id": user.id
                 })
                 .append($a);
@@ -100,7 +100,9 @@ var handleUserSubmit = function (event) {
         first_name: $userFirst.val().trim(),
         last_name: $userLast.val().trim()
     };
-    console.log(user);
+    console.log(user.first_name + " var user inside handleUserSubmit func");
+    console.log(user.last_name + " var user inside handleUserSubmit func");
+    console.log(user + " var user inside handleUserSubmit func");
 
     if (!(user.last_name && user.last_name)) {
         alert("Please enter your first and last name.");
@@ -108,10 +110,12 @@ var handleUserSubmit = function (event) {
     }
 
     API.saveUser(user).then(function () {
+        console.log(user + "API.saveUser call");
         refreshUsers();
     });
 
     $userFirst.val("");
+    console.log($userFirst + "after val clear");
     $userLast.val("");
 };
 
@@ -136,7 +140,7 @@ var refreshVolunteers = function () {
 
             var $li = $("<li>")
                 .attr({
-                    class: "list-group-item",
+                    class: "list-user-item",
                     "data-id": volunteer.id
                 })
                 .append($a);
@@ -285,7 +289,3 @@ $("#request-services-chosen").on("click", function (e) {
 // event listeners
 $userSubmitBtn.on("click", handleUserSubmit);
 $userList.on("click", ".delete-user", handleDeleteButton);
-
-$("#user-first-name").on("click", function () {
-    console.log($userFirst.val());
-});

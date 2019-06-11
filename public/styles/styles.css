@@ -10,6 +10,10 @@ body, html {
   line-height: 2.5;
 }
 
+.list-user-item {
+  line-height: 2.5;
+}
+
 #logo-main {
   display: inline-block;
   max-width:180px;
