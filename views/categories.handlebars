@@ -69,15 +69,10 @@
      {{> women-workplace}}
   {{/render_category}}
 
-  {{!-- {{#render_category "categories" this.category}}
-    <div class="row">
-        <div class="hero-image" id="categories-hero-image">
-          <div class="hero-text" id="categories-hero-text">
-            <h3>Explore</h3>
-          </div>
-        </div>
-    </div>
-  {{/render_category}} --}}
+  {{#render_category "category" this.category}}
+    {{> categories-landing}}
+  {{/render_category}}
+
 </div>
 
 
@@ -86,7 +81,7 @@
   <div class="container results-body">
     <div class="row">
       {{#each result}}
-      <div class="col s12 m6 l4 article-card">
+      <div class="col s12 m6 l4 article-card" id="category-articles">
         <a target="blank" href="{{this.url}}">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
