@@ -106,9 +106,13 @@ $(document).ready(function () {
 
         var interestsArray = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
         var $interestOptions = $("#append-radios-checkmarks");
+        var $appendH6 = $(".append-h6");
 
         $interestOptions.empty();
+        $appendH6.empty();
         e.preventDefault();
+
+        $appendH6.html("<h6>In which areas are you best suited to volunteer?</h6>");
 
         for (var i = 0; i < interestsArray.length; i++) {
             console.log(interestsArray[i]);
