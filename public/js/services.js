@@ -110,7 +110,7 @@ $(document).ready(function () {
 
         $interestOptions.empty();
         // appendH6.empty();
-        e.preventDefault();
+        // e.preventDefault();
 
         // appendH6.html("<h6>In which areas are you best suited to volunteer?</h6>");
         // $("#append-radios-checkmarks").append(appendH6);
@@ -156,7 +156,7 @@ $(document).ready(function () {
         var $interestOptions = $("#append-radios-checkmarks");
 
         $interestOptions.empty();
-        e.preventDefault();
+        // e.preventDefault();
 
         for (var i = 0; i < interestsArray.length; i++) {
             var interestPara = $("<p>");
