@@ -1,4 +1,5 @@
 var db = require("../models");
+var Handlebars = require("express-handlebars");
 
 module.exports = function(app) {
   // Load index page
@@ -21,14 +22,20 @@ module.exports = function(app) {
     });
   });
 
-    // Load specific categories page
-    app.get("/categories/:category?", function(req, res) {
-      db.Example.findAll({}).then(function(dbExamples) {
-        res.render("categories", {
-          category: req.params.category
-        });
-      });
+  // Load specific categories page
+  app.get("/categories/:category?", function(req, res) {
+    Handlebars.registerHelper("render_category", function(category, selection, options) {
+      if (category === selection) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
     });
+
+    res.render("categories", {
+      category: req.params.category
+    });
+  });
 
   // Load services page
   app.get("/services", function(req, res) {
