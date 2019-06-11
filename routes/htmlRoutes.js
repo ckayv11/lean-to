@@ -8,8 +8,8 @@ Handlebars.registerHelper("render_category", function(category, selection, optio
   console.log(category, selection);
   if (category === selection) {
     return options.fn(this);
-  } else if (category = "category") {
-    return options.fn(this);
+  } else {
+    return options.inverse(this);
   }
 });
 
