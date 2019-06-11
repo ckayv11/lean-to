@@ -6,37 +6,37 @@
 
       <div class="category-btn" id="mind">
         <div class="col s2">
-          <a href="/api/categories/women&body">Mind & Body</a>
+          <a href="/categories/women-mind-body">Mind & Body</a>
         </div>
       </div>
 
       <div class="category-btn" id="love">
         <div class="col s2">
-          <a href="/api/categories/intimacy">Love & Intimacy</a>
+          <a href="/categories/intimacy">Love & Intimacy</a>
         </div>
       </div>
 
       <div class="category-btn" id="fertility">
         <div class="col s2">
-          <a href="/api/categories/pregnancy">Fertility & Pregnancy</a>
+          <a href="/categories/pregnancy">Fertility & Pregnancy</a>
         </div>
       </div>
 
       <div class="category-btn" id="family">
         <div class="col s2">
-          <a href="/api/categories/parenting">Family & Parenting</a>
+          <a href="/categories/parenting">Family & Parenting</a>
         </div>
       </div>
 
       <div class="category-btn" id="health">
         <div class="col s2">
-          <a href="/api/categories/women&health">Women’s Health</a>
+          <a href="/categories/women&health">Women’s Health</a>
         </div>
       </div>
 
       <div class="category-btn" id="work">
         <div class="col s2">
-          <a href="/api/categories/women-in-the-workplace">Women in the Workplace</a>
+          <a href="/categories/women-in-the-workplace">Women in the Workplace</a>
         </div>
       </div>
 
@@ -45,36 +45,41 @@
 
 {{!-- Image Banner --}}
 <div class="row" id="categories-image-section">
-  {{#render_category "mind-body" category}}
-     {{> partials/mind-body}}
+  {{#render_category "women-mind-body" this.category}}
+     {{> mind-body}}
   {{/render_category}}
-<!--  <div class="col s6 m6" id="image-div1">-->
-<!--    <img src="/images/parenting2.jpg" id="categories-image-banner">-->
-<!--  </div>-->
-<!--  <div class="hero-text" id="categories-hero-text">-->
-<!--    <h3>Family & Parenting</h3>-->
-<!--  </div>-->
-<!--  <div class="col s6 m6" id="image-div2">-->
-<!--    <img src="/images/parenting3.jpg" id="categories-image-banner2">-->
-<!--  </div>-->
+
+  {{#render_category "intimacy" this.category}}
+     {{> love-intimacy}}
+  {{/render_category}}
+
+  {{#render_category "pregnancy" this.category}}
+     {{> fertility-pregnancy}}
+  {{/render_category}}
+
+  {{#render_category "parenting" this.category}}
+     {{> family-parenting}}
+  {{/render_category}}
+
+  {{#render_category "women&health" this.category}}
+     {{> womens-health}}
+  {{/render_category}}
+
+  {{#render_category "women-in-the-workplace" this.category}}
+     {{> women-workplace}}
+  {{/render_category}}
+
+  {{!-- {{#render_category "categories" this.category}}
+    <div class="row">
+        <div class="hero-image" id="categories-hero-image">
+          <div class="hero-text" id="categories-hero-text">
+            <h3>Explore</h3>
+          </div>
+        </div>
+    </div>
+  {{/render_category}} --}}
 </div>
 
-{{!-- Hero Banner --}}
-{{!-- <div class="row">
-    <div class="hero-image" id="categories-hero-image">
-      <div class="hero-text" id="categories-hero-text">
-        <h3>Women's Health</h3>
-      </div>
-    </div>
-</div> --}}
-
-{{!-- Related Articles Section --}}
-<div class="row results-header">
-    <div class="col s12 center-align">
-        <h5>Related Articles</h5>
-        <hr align="center" width="30%">
-    </div>
-</div>
 
 {{!-- Article Results go here dynamically using API and javascript--}}
   
