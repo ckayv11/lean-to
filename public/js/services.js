@@ -101,16 +101,19 @@ $(document).ready(function () {
     // display the appropriate radio/checkmark booleans (volunteers can have multiple interests...
     // and requesters can have only one request);
 
-   $("#volunteer-chosen").on("click", function(e) {
-        console.log("clicked");
+    $("#volunteer-chosen").on("click", function (e) {
+        console.log("volunteer clicked");
 
         var interestsArray = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
         var $interestOptions = $("#append-radios-checkmarks");
-        var $appendH6 = $(".append-h6");
+        // var appendH6 = $(".append-h6");
 
         $interestOptions.empty();
-        $appendH6.empty();
+        // appendH6.empty();
         e.preventDefault();
+
+        // appendH6.html("<h6>In which areas are you best suited to volunteer?</h6>");
+        // $("#append-radios-checkmarks").append(appendH6);
 
         for (var i = 0; i < interestsArray.length; i++) {
             console.log(interestsArray[i]);
@@ -121,16 +124,16 @@ $(document).ready(function () {
             var interestSpan = $("<span>");
             // var interestSpan = $("<span>");
             // console.log(interestInput[0]);
-            
+
             interestPara.addClass("append-label");
             interestPara.attr("data-para", interestsArray[i]);
 
             interestLabel.addClass("append-input");
-            
-            interestInput.addClass("filled-in append");            
-            interestInput.attr("type", "checkbox");            
-            interestInput.attr("data-input", interestsArray[i]);            
-            
+
+            interestInput.addClass("filled-in append");
+            interestInput.attr("type", "checkbox");
+            interestInput.attr("data-input", interestsArray[i]);
+
             interestSpan.addClass("user-needs");
             interestSpan.attr("data-span", interestsArray[i]);
             interestSpan.text(interestsArray[i]);
@@ -141,15 +144,49 @@ $(document).ready(function () {
             interestPara.append(interestLabel);
             $("#append-radios-checkmarks").append(interestPara);
             // $("#append-radios-checkmarks").append(interestSpan);
-            
+
         }
 
-        $appendH6.html("<h6>In which areas are you best suited to volunteer?</h6>");
-        
-});
+    });
 
-$("#request-services-chosen").on("click", function(e) {
-    //.
-});
+    $("#request-services-chosen").on("click", function (e) {
+        console.log("request clicked");
+
+        var interestsArray = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
+        var $interestOptions = $("#append-radios-checkmarks");
+
+        $interestOptions.empty();
+        e.preventDefault();
+
+        for (var i = 0; i < interestsArray.length; i++) {
+            var interestPara = $("<p>");
+            var interestLabel = $("<label>");
+            var interestInput = $("<input />");
+            var interestSpan = $("<span>");
+            // var interestSpan = $("<span>");
+            // console.log(interestInput[0]);
+
+            interestPara.addClass("append-label");
+            interestPara.attr("data-para", interestsArray[i]);
+
+            interestLabel.addClass("append-input");
+
+            interestInput.addClass("filled-in append");
+            interestInput.attr("type", "checkbox");
+            // interestInput.attr("name", "requester-radio");
+            interestInput.attr("data-input", interestsArray[i]);
+
+            interestSpan.addClass("user-needs");
+            interestSpan.attr("data-span", interestsArray[i]);
+            interestSpan.text(interestsArray[i]);
+            // interestSpan.text(interests[i]);
+
+            interestLabel.append(interestInput);
+            interestLabel.append(interestSpan);
+            interestPara.append(interestLabel);
+            $("#append-radios-checkmarks").append(interestPara);
+
+        }
+    });
 
 });
