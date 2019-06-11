@@ -45,6 +45,9 @@
 
 {{!-- Image Banner --}}
 <div class="row" id="categories-image-section">
+  {{#if category == "mind-body"}}
+     {{> partials/mind-body}}
+     {{else}}
   <div class="col s6 m6" id="image-div1">
     <img src="/images/parenting2.jpg" id="categories-image-banner">
   </div>
@@ -54,6 +57,7 @@
   <div class="col s6 m6" id="image-div2">
     <img src="/images/parenting3.jpg" id="categories-image-banner2">
   </div>
+  {{/if}}
 </div>
 
 {{!-- Hero Banner --}}

@@ -21,6 +21,15 @@ module.exports = function(app) {
     });
   });
 
+    // Load specific categories page
+    app.get("/categories/:category?", function(req, res) {
+      db.Example.findAll({}).then(function(dbExamples) {
+        res.render("categories", {
+          category: req.params.category
+        });
+      });
+    });
+
   // Load services page
   app.get("/services", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
