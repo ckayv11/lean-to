@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var db = require("../models");
 var axios = require("axios");
 var moment = require('moment');
@@ -59,7 +61,7 @@ module.exports = function(app) {
       '&from=' + currentDate +
       'sortBy=relevance&' +
       'language=en&' +
-      'apiKey=7901a57d723f41f19a8842e99327ab2e';
+      'apiKey=' + process.env.API_key;
     // axios call to get api based on the category
     axios.get(queryURL).then(function(result) {
       console.log(result);
@@ -80,7 +82,7 @@ module.exports = function(app) {
         '&from=' + currentDate +
         'sortBy=relevance&' +
         'language=en&' +
-        'apiKey=7901a57d723f41f19a8842e99327ab2e';
+        'apiKey=' + process.env.API_key;
       // axios call to get api based on the category
       axios.get(queryURL).then(function(result) {
         console.log(result);
@@ -102,7 +104,7 @@ module.exports = function(app) {
       '&from=' + currentDate +
       'sortBy=relevance&' +
       'language=en&' +
-      'apiKey=7901a57d723f41f19a8842e99327ab2e';
+      'apiKey=' + process.env.API_key;
     // axios call to get api based on the category
     axios.get(queryURL).then(function(result) {
       console.log(result);
@@ -123,7 +125,7 @@ module.exports = function(app) {
         '&from=' + currentDate +
         'sortBy=relevance&' +
         'language=en&' +
-        'apiKey=7901a57d723f41f19a8842e99327ab2e';
+        'apiKey=' + process.env.API_key;
       // axios call to get api based on the category
       axios.get(queryURL).then(function(result) {
         console.log(result);

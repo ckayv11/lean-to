@@ -112,8 +112,6 @@ $(document).ready(function () {
         $appendH6.empty();
         e.preventDefault();
 
-        $appendH6.html("<h6>In which areas are you best suited to volunteer?</h6>");
-
         for (var i = 0; i < interestsArray.length; i++) {
             console.log(interestsArray[i]);
 
@@ -145,6 +143,9 @@ $(document).ready(function () {
             // $("#append-radios-checkmarks").append(interestSpan);
             
         }
+
+        $appendH6.html("<h6>In which areas are you best suited to volunteer?</h6>");
+        
 });
 
 $("#request-services-chosen").on("click", function(e) {
