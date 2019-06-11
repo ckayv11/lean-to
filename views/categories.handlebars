@@ -1,46 +1,46 @@
 {{!-- brand container --}}
-  <div class="container">
+<div class="container">
 
-    {{!-- second "nav" --}}
-    <div class="row center-align" style="min-height: 30px" id="sec-nav">
+  {{!-- second "nav" --}}
+  <div class="row center-align" style="min-height: 30px" id="sec-nav">
 
-      <div class="category-btn" id="mind">
-        <div class="col s2">
-          <a href="/api/categories/women&body">Mind & Body</a>
-        </div>
+    <div class="category-btn" id="mind">
+      <div class="col s2">
+        <a href="/api/categories/women&body">Mind & Body</a>
       </div>
-
-      <div class="category-btn" id="love">
-        <div class="col s2">
-          <a href="/api/categories/intimacy">Love & Intimacy</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="fertility">
-        <div class="col s2">
-          <a href="/api/categories/pregnancy">Fertility & Pregnancy</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="family">
-        <div class="col s2">
-          <a href="/api/categories/parenting">Family & Parenting</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="health">
-        <div class="col s2">
-          <a href="/api/categories/women&health">Women’s Health</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="work">
-        <div class="col s2">
-          <a href="/api/categories/women-in-the-workplace">Women in the Workplace</a>
-        </div>
-      </div>
-
     </div>
+
+    <div class="category-btn" id="love">
+      <div class="col s2">
+        <a href="/api/categories/intimacy">Love & Intimacy</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="fertility">
+      <div class="col s2">
+        <a href="/api/categories/pregnancy">Fertility & Pregnancy</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="family">
+      <div class="col s2">
+        <a href="/api/categories/parenting">Family & Parenting</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="health">
+      <div class="col s2">
+        <a href="/api/categories/women&health">Women’s Health</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="work">
+      <div class="col s2">
+        <a href="/api/categories/women-in-the-workplace">Women in the Workplace</a>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 {{!-- Image Banner --}}
@@ -67,36 +67,36 @@
 
 {{!-- Related Articles Section --}}
 <div class="row results-header">
-    <div class="col s12 center-align">
-        <h5>Related Articles</h5>
-        <hr align="center" width="30%">
-    </div>
+  <div class="col s12 center-align">
+    <h5>Related Articles</h5>
+    <hr align="center" width="30%">
+  </div>
 </div>
 
 {{!-- Article Results go here dynamically using API and javascript--}}
-  
-  <div class="container results-body">
-    <div class="row">
-      {{#each result}}
-      <div class="col s12 m6 l4 article-card">
-        <a target="blank" href="{{this.url}}">
+
+<div class="container results-body">
+  <div class="row">
+    {{#each result}}
+    <div class="col s12 m6 l4 article-card">
+      <a target="blank" href="{{this.url}}">
         <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
+          <div class="card-image" id="urlImage">
             <img src="{{this.urlToImage}}" alt="article"></div>
         </div>
-          <div class="card-content center-align">
-            <p>{{this.publishedAt}}</p>
-            <span><h6>{{this.title}}</h6></span>
-            <p>By: {{this.author}}</p>
-          </div>
-        </a>
-      </div>
-      {{/each}}
+        <div class="card-content center-align">
+          <p>{{this.publishedAt}}</p>
+          <span>
+            <h6>{{this.title}}</h6>
+          </span>
+          <p>By: {{this.author}}</p>
+        </div>
+      </a>
     </div>
+    {{/each}}
   </div>
+</div>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/categories.js"></script>
- 
-
