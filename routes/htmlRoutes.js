@@ -24,11 +24,6 @@ module.exports = function (app) {
     });
   });
 
-<<<<<<< HEAD
-  // Load categories page
-  app.get("/categories", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-=======
     // Load categories/:categories page
     app.get("/categories/:category?", function(req, res) {
       console.log(req.params)
@@ -47,7 +42,6 @@ module.exports = function (app) {
         for (i = 0; i < resultData.length; i++) {
           resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
         }
->>>>>>> 3c3516d1946a81a7385a7f1fcab1fd03528bd837
       res.render("categories", {
         category: req.params.category, result: resultData
       });
