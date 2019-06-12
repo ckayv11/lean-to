@@ -13,10 +13,10 @@ Handlebars.registerHelper("render_category", function(category, selection, optio
   }
 });
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+  app.get("/", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
@@ -49,8 +49,8 @@ module.exports = function(app) {
     });
 
   // Load services page
-  app.get("/services", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+  app.get("/services", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
       res.render("services", {
         msg: "Welcome!",
         examples: dbExamples
@@ -59,8 +59,8 @@ module.exports = function(app) {
   });
 
   // Load admin page
-  app.get("/admin", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+  app.get("/admin", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
       res.render("admin", {
         msg: "Welcome!",
         examples: dbExamples
@@ -68,9 +68,29 @@ module.exports = function(app) {
     });
   });
 
+  // Load user page and pass in a user by id
+  app.get("/user/:id", function (req, res) {
+    db.User.findOne({ where: { id: req.params.id } })
+      .then(function (dbUser) {
+        res.render("user", {
+          user: dbUser
+        });
+      });
+  });
+
+  // Load volunteer page and pass in an volunteer by id
+  app.get("/volunteer/:id", function (req, res) {
+    db.Volunteer.findOne({ where: { id: req.params.id } })
+      .then(function (dbVolunteer) {
+        res.render("volunteer", {
+          volunteer: dbExample
+        });
+      });
+  });
+
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
+  app.get("/example/:id", function (req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function (
       dbExample
     ) {
       res.render("example", {
@@ -80,7 +100,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
