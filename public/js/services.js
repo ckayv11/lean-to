@@ -13,6 +13,16 @@ var $userRole = $("#hidden-div-role");
 // Get users
 // getUsers();
 
+var $gender;
+// var $userActivity = $("activity");
+$("input[type='radio']").click(function(){
+    var radioValue = $("input[name='gender']:checked")[0].id;
+    console.log(radioValue);
+    $gender = radioValue;
+    console.log($gender);
+    
+});
+
 // The API object contains methods for each kind of request we'll make
 var API = {
     saveUser: function (user) {
@@ -100,12 +110,13 @@ var handleUserSubmit = function (event) {
 
     var user = {
         first_name: $userFirst.val().trim(),
-        last_name: $userLast.val().trim()
+        last_name: $userLast.val().trim(),
+        gender: $gender.val
         // role: $userRole.val().trim()
     };
     //console.log(user.first_name + " var user inside handleUserSubmit func");
     //console.log(user.last_name + " var user inside handleUserSubmit func");
-    console.log(user.role + " var user inside handleUserSubmit func");
+    // console.log(user.role + " var user inside handleUserSubmit func");
     //console.log(user + " var user inside handleUserSubmit func");
 
     if (!(user.last_name && user.last_name)) {
