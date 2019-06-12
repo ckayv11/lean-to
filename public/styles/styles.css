@@ -170,6 +170,10 @@ h5 {
   background-color: #70597C;
 }
 
+#request-btn, #volunteer-btn, .delete-user {
+  background-color: #70597C;
+}
+
 .btn:hover, .btn-large:hover, .btn-small:hover {
   background-color: rgb(184, 162, 196);
 }

@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         email: DataTypes.STRING,
         date_of_birth: DataTypes.DATE,
         gender: DataTypes.BOOLEAN,
-        role: DataTypes.BOOLEAN
+        role: DataTypes.STRING
     });
 
     User.associate = function(models) {
