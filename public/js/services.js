@@ -7,10 +7,10 @@ var $volList = $("#volunteer-list");
 var $userList = $("#users-list");
 var $userFirst = $("#user-first-name");
 var $userLast = $("#user-last-name");
-// var $userRole = $("role");
+// var $userRole = $("#hidden-div-role");
 // var $userActivity = $("activity");
 
-// Get initial list of Users
+// Get users
 // getUsers();
 
 // The API object contains methods for each kind of request we'll make
@@ -22,7 +22,7 @@ var API = {
             // },
             type: "POST",
             url: "api/users",
-            data: (user)
+            data: user
         });
     },
     getUsers: function () {
@@ -44,7 +44,7 @@ var API = {
             // },
             type: "POST",
             url: "api/volunteers",
-            data: (volunteer)
+            data: volunteer
         });
     },
     getVolunteers: function () {
@@ -68,7 +68,8 @@ var refreshUsers = function () {
     API.getUsers().then(function (data) {
         var $users = data.map(function (user) {
             var $a = $("<a>")
-                .text(user.first_name)
+                .text(user.first_name + " " + user.last_name 
+                + " ")
                 .attr("href", "/user/" + user.id);
 
             var $li = $("<li>")
@@ -87,22 +88,25 @@ var refreshUsers = function () {
             return $li;
         });
 
+        // append to html
         $userList.empty();
         $userList.append($users);
     });
 };
 
 var handleUserSubmit = function (event) {
-    console.log("handleUserSubmit function");
+    //console.log("handleUserSubmit function");
     event.preventDefault();
 
     var user = {
         first_name: $userFirst.val().trim(),
         last_name: $userLast.val().trim()
+        // role: $userRole.val().trim()
     };
-    console.log(user.first_name + " var user inside handleUserSubmit func");
-    console.log(user.last_name + " var user inside handleUserSubmit func");
-    console.log(user + " var user inside handleUserSubmit func");
+    //console.log(user.first_name + " var user inside handleUserSubmit func");
+    //console.log(user.last_name + " var user inside handleUserSubmit func");
+    console.log(user.role + " var user inside handleUserSubmit func");
+    //console.log(user + " var user inside handleUserSubmit func");
 
     if (!(user.last_name && user.last_name)) {
         alert("Please enter your first and last name.");
@@ -110,13 +114,16 @@ var handleUserSubmit = function (event) {
     }
 
     API.saveUser(user).then(function () {
-        console.log(user + "API.saveUser call");
+        //console.log(user + "API.saveUser call");
         refreshUsers();
     });
 
     $userFirst.val("");
     $userLast.val("");
-    console.log($userFirst + "after val clear");
+    // $userRole.val("");
+
+    $("#hidden-div-role").val("");
+    //console.log($userFirst + "after val clear");
 };
 
 var handleUserDelete = function () {
@@ -166,13 +173,13 @@ function volunteerFormSubmit(event) {
     var volunteer = {
         vol_name: $volFirstName.val().trim()
     }
-    console.log(volunteer);
+    //console.log(volunteer);
 
     if (!(volunteer.vol_name)) {
         alert("You must enter your name!");
         return;
 
-        console.log("add first name");
+        //console.log("add first name");
     }
 
     API.saveVolunteer(volunteer)
@@ -198,7 +205,10 @@ function handleDeleteButton() {
 // and requesters can have only one request);
 
 $("#volunteer-chosen").on("click", function (e) {
-    console.log("volunteer clicked");
+    //console.log("volunteer clicked");
+
+    $("#hidden-div-role").text("volunteer");
+    // console.log($userRole);
 
     var interestsArray = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
     var $interestOptions = $("#append-radios-checkmarks");
@@ -212,14 +222,14 @@ $("#volunteer-chosen").on("click", function (e) {
     // $("#append-radios-checkmarks").append(appendH6);
 
     for (var i = 0; i < interestsArray.length; i++) {
-        console.log(interestsArray[i]);
+        //console.log(interestsArray[i]);
 
         var interestPara = $("<p>");
         var interestLabel = $("<label>");
         var interestInput = $("<input />");
         var interestSpan = $("<span>");
         // var interestSpan = $("<span>");
-        // console.log(interestInput[0]);
+        // //console.log(interestInput[0]);
 
         interestPara.addClass("append-label");
         interestPara.attr("data-para", interestsArray[i]);
@@ -247,7 +257,10 @@ $("#volunteer-chosen").on("click", function (e) {
 });
 
 $("#request-services-chosen").on("click", function (e) {
-    console.log("request clicked");
+    //console.log("request clicked");
+
+    $("#hidden-div-role").text("requester");
+    // console.log($userRole);
 
     var interestsArray = ["Transportation", "Pet Care", "Babysitting", "Groceries", "Errands", "Yardwork", "Housekeeping", "Home Projects", "Movers"];
     var $interestOptions = $("#append-radios-checkmarks");
@@ -261,7 +274,7 @@ $("#request-services-chosen").on("click", function (e) {
         var interestInput = $("<input />");
         var interestSpan = $("<span>");
         // var interestSpan = $("<span>");
-        // console.log(interestInput[0]);
+        // //console.log(interestInput[0]);
 
         interestPara.addClass("append-label");
         interestPara.attr("data-para", interestsArray[i]);
@@ -288,4 +301,4 @@ $("#request-services-chosen").on("click", function (e) {
 
 // event listeners
 $userSubmitBtn.on("click", handleUserSubmit);
-$userList.on("click", ".delete-user", handleDeleteButton);
+// $userList.on("click", ".delete-user", handleDeleteButton);

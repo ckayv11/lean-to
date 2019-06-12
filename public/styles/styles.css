@@ -201,7 +201,7 @@ h5 {
   transform: translate(-50%,-50%);
 }
 
-#request-btn, #volunteer-btn {
+#request-btn, #volunteer-btn, .delete-user {
   background-color: #70597C;
 }
 

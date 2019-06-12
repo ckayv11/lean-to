@@ -4,15 +4,15 @@ var db = require("../models");
 var axios = require("axios");
 var moment = require('moment');
 
-module.exports = function(app) {
+module.exports = function (app) {
 
   // Users ============================================================
 
   // User findAll query
   // Set value to an array of the models we want to include in a left outer join
   // In this case, just db.UserServices
-  app.get("/api/users", function(req, res) {
-    db.User.findAll({ include: [db.UserServices] }).then(function(dbUser) {
+  app.get("/api/users", function (req, res) {
+    db.User.findAll({ include: [db.UserServices] }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
@@ -39,74 +39,82 @@ module.exports = function(app) {
   //     });
   // });
 
-// Create new User
+  // Create new User === christian's suggestion
+  // app.post("/api/users", function (req, res) {  
+  //   db.User.create(
+  //     { first_name: req.body.first_name },
+  //     { last_name: req.body.last_name }
+  //   ).then(function (dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
+
+  // Create new User
   app.post("/api/users", function (req, res) {
-    db.User.create(
-      { first_name: req.body.first_name },
-      { last_name: req.body.last_name }
-    ).then(function (dbUser) {
-      res.json(dbUser);
-    });
+    db.User.create(req.body)
+      .then(function (dbUsers) {
+        res.json(dbUsers);
+      });
   });
 
   // Delete User
-  app.delete("/api/users/:id", function(req, res) {
-    db.User.destroy({ where: { id: req.params.id } })
-      .then(function(dbUser) {
-        res.json(dbUser);
-      });
-  });
+  // app.delete("/api/users/:id", function(req, res) {
+  //   db.User.destroy({ where: { id: req.params.id } })
+  //     .then(function(dbUser) {
+  //       res.json(dbUser);
+  //     });
+  // });
 
 
   // Volunteers ====================================================
 
   // Get all volunteers
-  app.get("/api/volunteers", function(req, res) {
-    db.Volunteer.findAll({}).then(function(dbVolunteers) {
+  app.get("/api/volunteers", function (req, res) {
+    db.Volunteer.findAll({}).then(function (dbVolunteers) {
       res.json(dbVolunteers);
     });
   });
 
   // Create new Volunteer
-  app.post("/api/volunteers", function(req, res) {
-    db.Volunteer.create(req.body).then(function(dbVolunteers) {
+  app.post("/api/volunteers", function (req, res) {
+    db.Volunteer.create(req.body).then(function (dbVolunteers) {
       res.json(dbVolunteers);
     });
   });
 
   // Delete Volunteer
-  app.delete("/api/volunteers/:id", function(req, res) {
+  app.delete("/api/volunteers/:id", function (req, res) {
     db.Volunteer.destroy({ where: { id: req.params.id } })
-      .then(function(dbVolunteers) {
+      .then(function (dbVolunteers) {
         res.json(dbVolunteers);
       });
   });
 
   // EXAMPLES start =================================================
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+  app.get("/api/examples", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
       res.json(dbExamples);
     });
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
+  app.post("/api/examples", function (req, res) {
+    db.Example.create(req.body).then(function (dbExample) {
       res.json(dbExample);
     });
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.delete("/api/examples/:id", function (req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
       res.json(dbExample);
     });
   });
   // EXAMPLES end ==================================================
 
 
-// ------------ Categories API Routes ------------//  
+  // ------------ Categories API Routes ------------//  
   // Get random articles when category page is loaded
   // app.get("/categories", function(req, res) {
   //   const currentDate = moment().format('YYYY-MM-DD');
@@ -128,30 +136,30 @@ module.exports = function(app) {
   // });  
 
   // Get articles by specific category
-    // app.get("/api/categories/:category", function(req, res) {
-    //   const category = req.params.category;
-    //   const currentDate = moment().format('YYYY-MM-DD');
-    //   var queryURL = 'https://newsapi.org/v2/everything?' +
-    //     'q=' + category +
-    //     '&from=' + currentDate +
-    //     'sortBy=relevance&' +
-    //     'language=en&' +
-    //     'apiKey=' + process.env.API_key;
-    //   // axios call to get api based on the category
-    //   axios.get(queryURL).then(function(result) {
-    //     console.log(result);
-    //     var resultData = result.data.articles;
-    //     for (i = 0; i < resultData.length; i++) {
-    //       resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-    //     }
-    //     res.render("categories", {result: resultData})
-    //   });
-    // });
+  // app.get("/api/categories/:category", function(req, res) {
+  //   const category = req.params.category;
+  //   const currentDate = moment().format('YYYY-MM-DD');
+  //   var queryURL = 'https://newsapi.org/v2/everything?' +
+  //     'q=' + category +
+  //     '&from=' + currentDate +
+  //     'sortBy=relevance&' +
+  //     'language=en&' +
+  //     'apiKey=' + process.env.API_key;
+  //   // axios call to get api based on the category
+  //   axios.get(queryURL).then(function(result) {
+  //     console.log(result);
+  //     var resultData = result.data.articles;
+  //     for (i = 0; i < resultData.length; i++) {
+  //       resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+  //     }
+  //     res.render("categories", {result: resultData})
+  //   });
+  // });
 
-// ------------ Index API Routes ------------//  
-  
+  // ------------ Index API Routes ------------//  
+
   // Get latest posts
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     const currentDate = moment().format('YYYY-MM-DD');
     var queryURL = 'https://newsapi.org/v2/everything?' +
       'q=female+leaders' +
@@ -160,35 +168,35 @@ module.exports = function(app) {
       'language=en&' +
       'apiKey=' + process.env.API_key;
     // axios call to get api based on the category
-    axios.get(queryURL).then(function(result) {
+    axios.get(queryURL).then(function (result) {
       console.log(result);
       var resultData = result.data.articles;
       for (i = 0; i < resultData.length; i++) {
         resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
       }
-      res.render("index", {result: resultData})
+      res.render("index", { result: resultData })
     });
   });
 
-    // Get articles by specific category
-    app.get("/api/index/:category", function(req, res) {
-      const category = req.params.category;
-      const currentDate = moment().format('YYYY-MM-DD');
-      var queryURL = 'https://newsapi.org/v2/everything?' +
-        'q=' + category +
-        '&from=' + currentDate +
-        'sortBy=relevance&' +
-        'language=en&' +
-        'apiKey=' + process.env.API_key;
-      // axios call to get api based on the category
-      axios.get(queryURL).then(function(result) {
-        console.log(result);
-        var resultData = result.data.articles;
-        for (i = 0; i < resultData.length; i++) {
-          resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-        }
-        res.render("categories", {result: resultData})
-      });
+  // Get articles by specific category
+  app.get("/api/index/:category", function (req, res) {
+    const category = req.params.category;
+    const currentDate = moment().format('YYYY-MM-DD');
+    var queryURL = 'https://newsapi.org/v2/everything?' +
+      'q=' + category +
+      '&from=' + currentDate +
+      'sortBy=relevance&' +
+      'language=en&' +
+      'apiKey=' + process.env.API_key;
+    // axios call to get api based on the category
+    axios.get(queryURL).then(function (result) {
+      console.log(result);
+      var resultData = result.data.articles;
+      for (i = 0; i < resultData.length; i++) {
+        resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+      }
+      res.render("categories", { result: resultData })
     });
+  });
 
 };

@@ -1,10 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
     var Requester = sequelize.define("Requester", {
-        req_name: DataTypes.STRING,
-        role: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        }
+        // req_name: DataTypes.STRING,
+        // role: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // }
     });
 
     Requester.associate = function (models) {

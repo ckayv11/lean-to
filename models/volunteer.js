@@ -1,17 +1,18 @@
 module.exports = function (sequelize, DataTypes) {
     var Volunteer = sequelize.define("Volunteer", {
-        vol_name: DataTypes.STRING,
-        availability: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        role: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        }
+        // vol_name: DataTypes.STRING,
+        // availability: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: false,
+        //     validate: {
+        //         len: [1]
+        //     }
+        // },
+        // role: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // }
+
         // validate, type and allowsNull have to be wrapped in an object
         // availability: DataTypes.BOOLEAN,
         // allowNull: false,
