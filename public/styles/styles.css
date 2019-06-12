@@ -166,43 +166,12 @@ h5 {
   -webkit-box-shadow: none;
 }
 
-.article-card {
-  margin-bottom: 50px;
-  -webkit-box-shadow: none;
-  height: 360px;
-}
-
-.article-card p {
-  font-size: 15px;
-}
-
-.article-card h6 {
-  font-size: 18px;
-  line-height: 1.2;
-}
-
-#urlImage img {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-#request_volunteer {
-  color: whitesmoke;
-  font-size: 30px;
-  text-align: center;
-  padding: 150px 0;
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%,-50%);
-}
-
-#request-btn, #volunteer-btn {
+.btn {
   background-color: #70597C;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: rgb(184, 162, 196);
 }
 
 /* ==================================== Modal ==================================== */
@@ -224,6 +193,11 @@ h5 {
   overflow: hidden;
   position: relative;
 }
+
+#modal-user-form {
+  padding: 5%;
+}
+
 
 /* ==================================== Footer ==================================== */
 .footer {
@@ -309,20 +283,7 @@ h5 {
   margin-top: 10px;
 }
 
-#request_volunteer {
-  color: whitesmoke;
-  font-size: 30px;
-  text-align: center;
-  padding: 150px 0;
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%,-50%);
-}
-
-#request-btn, #volunteer-btn, #card-btn {
-  background-color: #70597C;
-}
+/* ==================================== Article Cards ==================================== */
 
 #article-icon, #service-icon, #community-icon {
   width: 100px;
@@ -330,4 +291,85 @@ h5 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.article-card {
+  margin-bottom: 50px;
+  -webkit-box-shadow: none;
+  height: 360px;
+}
+
+.article-card p {
+  font-size: 15px;
+}
+
+.article-card h6 {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+#urlImage img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#services-hero-text {
+  color: whitesmoke;
+  font-size: 25px;
+  text-align: left;
+  padding: 150px;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%,-50%);
+}
+
+/* ==================================== Media Queries ==================================== */
+
+@media only screen and (max-width: 990px) {
+
+  #services-hero-text {
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+    position: absolute;
+    top: 90%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+  }
+
+  .explore, .service {
+    margin-bottom: 10%;
+  }
+
+  @media only screen and (max-width: 780px) {
+
+    .first-nav a {
+      font-size: 12px;
+    }
+
+    #sec-nav {
+      font-size: 10px;
+    }
+
+    #categories-image-section {
+      margin-top: 10px;
+      position: relative;
+      height: 30%;
+      width: 100%;
+    }
+    
+    #categories-image-banner, #categories-image-banner2 {
+      width: 100%;
+      height: 200px;
+    }
+
+    #categories-hero-text h3 {
+      font-size: 1.5rem;
+    }
 }
