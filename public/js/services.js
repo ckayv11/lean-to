@@ -7,7 +7,7 @@ var $volList = $("#volunteer-list");
 var $userList = $("#users-list");
 var $userFirst = $("#user-first-name");
 var $userLast = $("#user-last-name");
-// var $userRole = $("#hidden-div-role");
+var $userRole = $("#hidden-div-role");
 // var $userActivity = $("activity");
 
 // Get users
