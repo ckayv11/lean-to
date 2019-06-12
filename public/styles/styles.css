@@ -169,6 +169,7 @@ h5 {
 .article-card {
   margin-bottom: 50px;
   -webkit-box-shadow: none;
+  height: 360px;
 }
 
 .article-card p {
@@ -178,6 +179,15 @@ h5 {
 .article-card h6 {
   font-size: 18px;
   line-height: 1.2;
+}
+
+#urlImage img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 #request_volunteer {
@@ -208,6 +218,13 @@ h5 {
   color: rgb(105, 105, 105);
 }
 
+#urlImage {
+  width: 100%;
+  padding-bottom: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
 /* ==================================== Footer ==================================== */
 .footer {
   left: 0;
@@ -226,15 +243,15 @@ h5 {
 }
 
 /* ==================================== Hero Banner ==================================== */
-/* #categories-hero-image {
-  background-image: url('../images/womens-health.jpg');
+#categories-hero-image {
+  background-image: url('../images/parenting.jpg');
   height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   margin-top: 10px;
-} */
+}
 
 #categories-image-section {
   margin-top: 10px;

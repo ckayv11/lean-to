@@ -8,37 +8,37 @@
 
       <div class="category-btn" id="mind">
         <div class="col s2">
-          <a href="/api/categories/women&body">Mind & Body</a>
+          <a href="/categories/women-mind-body">Mind & Body</a>
         </div>
       </div>
 
       <div class="category-btn" id="love">
         <div class="col s2">
-          <a href="/api/categories/intimacy">Love & Intimacy</a>
+          <a href="/categories/intimacy">Love & Intimacy</a>
         </div>
       </div>
 
       <div class="category-btn" id="fertility">
         <div class="col s2">
-          <a href="/api/categories/pregnancy">Fertility & Pregnancy</a>
+          <a href="/categories/pregnancy">Fertility & Pregnancy</a>
         </div>
       </div>
 
       <div class="category-btn" id="family">
         <div class="col s2">
-          <a href="/api/categories/parenting">Family & Parenting</a>
+          <a href="/categories/parenting">Family & Parenting</a>
         </div>
       </div>
 
       <div class="category-btn" id="health">
         <div class="col s2">
-          <a href="/api/categories/women&health">Women’s Health</a>
+          <a href="/categories/women&health">Women’s Health</a>
         </div>
       </div>
 
       <div class="category-btn" id="work">
         <div class="col s2">
-          <a href="/api/categories/women-in-the-workplace">Women in the Workplace</a>
+          <a href="/categories/women-in-the-workplace">Women in the Workplace</a>
         </div>
       </div>
 
@@ -49,41 +49,53 @@
   <div class="slider">
     <ul class="slides">
       <li>
+        <a href="/categories/women-mind-body">
         <img src="/images/mind-body.jpg">
         <div class="caption center-align">
           <h3>Mind & Body</h3>
         </div>
+        </a>
       </li>
       <li>
+        <a href="/categories/intimacy">
         <img src="/images/love-intimacy.jpg">
         <div class="caption center-align">
           <h3>Love & Intimacy</h3>
         </div>
+        </a>
       </li>
       <li>
+        <a href="/categories/pregnancy">
         <img src="/images/pregnancy.jpg">
         <div class="caption center-align">
           <h3>Fertility & Pregnancy</h3>
         </div>
+        </a>
       </li>
       <li>
+        <a href="/categories/parenting">
         <img src="/images/parenting.jpg">
         <div class="caption center-align">
           <h3>Family & Parenting</h3>
         </div>
+        </a>
       </li>
       <li>
+        <a href="/categories/women&health">
         <img src="/images/womens-health.jpg">
         <div class="caption center-align">
           <h3>Women's Health</h3>
         </div>
+        </a>
       </li>
 
       <li>
+        <a href="/categories/women-in-the-workplace">
         <img src="/images/women-working.jpg">
         <div class="caption center-align">
           <h3>Women in the Workplace</h3>
         </div>
+        </a>
       </li>
     </ul>
   </div>
@@ -108,7 +120,7 @@
     
     <div class="row">
       <h6>As a female-led team, our goal is to raise awareness on a variety of women's issues and advocate for women’s
-        health & safety. We provide a safe environment for women and other marginalized groups to find information and ask
+        health and safety. We provide a safe environment for women and other marginalized groups to find information and ask
         for non-emergency assistance from their community. We see a world where all of our neighbors have access to a
         supportive community, one where everyone works together to help one another. Our mission is to enhance the lives of
         those in need by offering our compassion, skills and services to all.
@@ -132,7 +144,7 @@
           </p>
         </div>
         <div class="card-action" style="border:none">
-          <a class="waves-effect waves-light btn modal-trigger" href="/categories" id="card-btn">Learn More</a>
+          <a class="waves-effect waves-light btn modal-trigger" href="/categories/category" id="card-btn">Learn More</a>
         </div>
       </div>
     </div>
@@ -185,10 +197,10 @@
   <div class="container results-body">
     <div class="row">
       {{#each result}}
-      <div class="col s12 m6 l6 article-card">
+      <div class="col s12 m6 l4 article-card" id="index-articles">
         <a target="blank" href="{{this.url}}">
         <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
+          <div class="card-image" id="urlImage">
             <img src="{{this.urlToImage}}" alt="article"></div>
         </div>
           <div class="card-content center-align">

@@ -1,92 +1,94 @@
 {{!-- brand container --}}
-  <div class="container">
+<div class="container">
 
-    {{!-- second "nav" --}}
-    <div class="row center-align" style="min-height: 30px" id="sec-nav">
+  {{!-- second "nav" --}}
+  <div class="row center-align" style="min-height: 30px" id="sec-nav">
 
-      <div class="category-btn" id="mind">
-        <div class="col s2">
-          <a href="/api/categories/women&body">Mind & Body</a>
-        </div>
+
+    <div class="category-btn" id="mind">
+      <div class="col s2">
+        <a href="/categories/women-mind-body">Mind & Body</a>
       </div>
-
-      <div class="category-btn" id="love">
-        <div class="col s2">
-          <a href="/api/categories/intimacy">Love & Intimacy</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="fertility">
-        <div class="col s2">
-          <a href="/api/categories/pregnancy">Fertility & Pregnancy</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="family">
-        <div class="col s2">
-          <a href="/api/categories/parenting">Family & Parenting</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="health">
-        <div class="col s2">
-          <a href="/api/categories/women&health">Women’s Health</a>
-        </div>
-      </div>
-
-      <div class="category-btn" id="work">
-        <div class="col s2">
-          <a href="/api/categories/women-in-the-workplace">Women in the Workplace</a>
-        </div>
-      </div>
-
     </div>
+
+    <div class="category-btn" id="love">
+      <div class="col s2">
+        <a href="/categories/intimacy">Love & Intimacy</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="fertility">
+      <div class="col s2">
+        <a href="/categories/pregnancy">Fertility & Pregnancy</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="family">
+      <div class="col s2">
+        <a href="/categories/parenting">Family & Parenting</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="health">
+      <div class="col s2">
+        <a href="/categories/women&health">Women’s Health</a>
+      </div>
+    </div>
+
+    <div class="category-btn" id="work">
+      <div class="col s2">
+        <a href="/categories/women-in-the-workplace">Women in the Workplace</a>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 {{!-- Image Banner --}}
 <div class="row" id="categories-image-section">
-  <div class="col s6 m6" id="image-div1">
-    <img src="/images/parenting2.jpg" id="categories-image-banner">
-  </div>
-  <div class="hero-text" id="categories-hero-text">
-    <h3>Family & Parenting</h3>
-  </div>
-  <div class="col s6 m6" id="image-div2">
-    <img src="/images/parenting3.jpg" id="categories-image-banner2">
-  </div>
-</div>
+  {{#render_category "women-mind-body" this.category}}
+  {{> mind-body}}
+  {{/render_category}}
 
-{{!-- Hero Banner --}}
-{{!-- <div class="row">
-    <div class="hero-image" id="categories-hero-image">
-      <div class="hero-text" id="categories-hero-text">
-        <h3>Women's Health</h3>
-      </div>
-    </div>
-</div> --}}
+  {{#render_category "intimacy" this.category}}
+  {{> love-intimacy}}
+  {{/render_category}}
 
-{{!-- Related Articles Section --}}
-<div class="row results-header">
-    <div class="col s12 center-align">
-        <h5>Related Articles</h5>
-        <hr align="center" width="30%">
-    </div>
-</div>
+  {{#render_category "pregnancy" this.category}}
+  {{> fertility-pregnancy}}
+  {{/render_category}}
 
-{{!-- Article Results go here dynamically using API and javascript--}}
-  
+  {{#render_category "parenting" this.category}}
+  {{> family-parenting}}
+  {{/render_category}}
+
+  {{#render_category "women&health" this.category}}
+  {{> womens-health}}
+  {{/render_category}}
+
+  {{#render_category "women-in-the-workplace" this.category}}
+  {{> women-workplace}}
+  {{/render_category}}
+
+  {{#render_category "category" this.category}}
+  {{> categories-landing}}
+  {{/render_category}}
+
+  {{!-- Article Results go here dynamically using API and javascript--}}
   <div class="container results-body">
     <div class="row">
       {{#each result}}
-      <div class="col s12 m6 l4 article-card">
+      <div class="col s12 m6 l4 article-card" id="category-articles">
         <a target="blank" href="{{this.url}}">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img src="{{this.urlToImage}}" alt="article"></div>
-        </div>
+          <div class="card">
+            <div class="card-image" id="urlImage">
+              <img src="{{this.urlToImage}}" alt="article"></div>
+          </div>
           <div class="card-content center-align">
             <p>{{this.publishedAt}}</p>
-            <span><h6>{{this.title}}</h6></span>
+            <span>
+              <h6>{{this.title}}</h6>
+            </span>
             <p>By: {{this.author}}</p>
           </div>
         </a>
@@ -94,9 +96,8 @@
       {{/each}}
     </div>
   </div>
+</div>
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/categories.js"></script>
- 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>

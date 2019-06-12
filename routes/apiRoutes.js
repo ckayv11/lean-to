@@ -108,45 +108,45 @@ module.exports = function(app) {
 
 // ------------ Categories API Routes ------------//  
   // Get random articles when category page is loaded
-  app.get("/categories", function(req, res) {
-    const currentDate = moment().format('YYYY-MM-DD');
-    var queryURL = 'https://newsapi.org/v2/everything?' +
-      'q=feminism' +
-      '&from=' + currentDate +
-      'sortBy=relevance&' +
-      'language=en&' +
-      'apiKey=' + process.env.API_key;
-    // axios call to get api based on the category
-    axios.get(queryURL).then(function(result) {
-      console.log(result);
-      var resultData = result.data.articles;
-      for (i = 0; i < resultData.length; i++) {
-        resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-      }
-      res.render("categories", {result: resultData})
-    });
-  });  
+  // app.get("/categories", function(req, res) {
+  //   const currentDate = moment().format('YYYY-MM-DD');
+  //   var queryURL = 'https://newsapi.org/v2/everything?' +
+  //     'q=feminism' +
+  //     '&from=' + currentDate +
+  //     'sortBy=relevance&' +
+  //     'language=en&' +
+  //     'apiKey=' + process.env.API_key;
+  //   // axios call to get api based on the category
+  //   axios.get(queryURL).then(function(result) {
+  //     console.log(result);
+  //     var resultData = result.data.articles;
+  //     for (i = 0; i < resultData.length; i++) {
+  //       resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+  //     }
+  //     res.render("categories", {result: resultData})
+  //   });
+  // });  
 
   // Get articles by specific category
-    app.get("/api/categories/:category", function(req, res) {
-      const category = req.params.category;
-      const currentDate = moment().format('YYYY-MM-DD');
-      var queryURL = 'https://newsapi.org/v2/everything?' +
-        'q=' + category +
-        '&from=' + currentDate +
-        'sortBy=relevance&' +
-        'language=en&' +
-        'apiKey=' + process.env.API_key;
-      // axios call to get api based on the category
-      axios.get(queryURL).then(function(result) {
-        console.log(result);
-        var resultData = result.data.articles;
-        for (i = 0; i < resultData.length; i++) {
-          resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-        }
-        res.render("categories", {result: resultData})
-      });
-    });
+    // app.get("/api/categories/:category", function(req, res) {
+    //   const category = req.params.category;
+    //   const currentDate = moment().format('YYYY-MM-DD');
+    //   var queryURL = 'https://newsapi.org/v2/everything?' +
+    //     'q=' + category +
+    //     '&from=' + currentDate +
+    //     'sortBy=relevance&' +
+    //     'language=en&' +
+    //     'apiKey=' + process.env.API_key;
+    //   // axios call to get api based on the category
+    //   axios.get(queryURL).then(function(result) {
+    //     console.log(result);
+    //     var resultData = result.data.articles;
+    //     for (i = 0; i < resultData.length; i++) {
+    //       resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+    //     }
+    //     res.render("categories", {result: resultData})
+    //   });
+    // });
 
 // ------------ Index API Routes ------------//  
   
