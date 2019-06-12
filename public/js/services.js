@@ -17,12 +17,12 @@ var $userLast = $("#user-last-name");
 var API = {
     saveUser: function (user) {
         return $.ajax({
-            headers: {
-                "Content-Type": "applications/json"
-            },
+            // headers: {
+            //     "Content-Type": "applications/json"
+            // },
             type: "POST",
             url: "api/users",
-            data: JSON.stringify(user)
+            data: (user)
         });
     },
     getUsers: function () {
@@ -39,12 +39,12 @@ var API = {
     },
     saveVolunteer: function (volunteer) {
         return $.ajax({
-            headers: {
-                "Content-Type": "application/json"
-            },
+            // headers: {
+            //     "Content-Type": "application/json"
+            // },
             type: "POST",
             url: "api/volunteers",
-            data: JSON.stringify(volunteer)
+            data: (volunteer)
         });
     },
     getVolunteers: function () {
@@ -114,9 +114,9 @@ var handleUserSubmit = function (event) {
         refreshUsers();
     });
 
-    // $userFirst.val("");
+    $userFirst.val("");
+    $userLast.val("");
     console.log($userFirst + "after val clear");
-    // $userLast.val("");
 };
 
 var handleUserDelete = function () {
