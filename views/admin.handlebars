@@ -13,33 +13,6 @@
         </div>
     </div>
 
-        {{!-- List of all Users --}}
-    
-    <div class="row">
-        <div class="col s12">
-    
-            {{!-- <form class="clearfix s12" action="POST">
-                <div class="form-group">
-                    <label for="user-name">User Name</label>
-                    <input type="text" id="user-name" class="form-control" aria-describedby="first_name"
-                        placeholder="Enter your name...">
-                </div>
-                <button id="submit_user" class="btn btn-primary float-right">Submit</button>
-            </form> --}}
-    
-            <h3>Users:</h3>
-            <ul id="users-list" class="list-group">
-                {{#each users}}
-                <li data-user-id="{{this.id}}" class="list-user-item">
-                    <a href="user/{{this.id}}">{{this.first_name}} {{this.last_name}}</a>
-                    <button class="btn btn-danger float-right delete-user">ｘ</button>
-                </li>
-                {{/each}}
-            </ul>
-    
-        </div>
-    </div>
-
     <!-- Open requests -->
 
     <div class="row">
