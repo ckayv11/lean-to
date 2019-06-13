@@ -10,7 +10,10 @@ module.exports = function(sequelize, DataTypes) {
         phone_number: DataTypes.INTEGER,
         email: DataTypes.STRING,
         date_of_birth: DataTypes.DATE,
-        gender: DataTypes.BOOLEAN,
+        gender: {
+            type: DataTypes.ENUM,
+            values: ['male', 'female', 'non-binary', 'denies']
+        },
         role: DataTypes.STRING
     });
 

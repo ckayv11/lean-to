@@ -12,7 +12,8 @@ module.exports = function (app) {
   // Set value to an array of the models we want to include in a left outer join
   // In this case, just db.UserServices
   app.get("/api/users", function (req, res) {
-    db.User.findAll({ include: [db.UserServices] }).then(function (dbUser) {
+    //db.User.findAll({ include: [db.UserServices] }).then(function (dbUser) {
+    db.User.findAll({}).then(function (dbUser) {
       res.json(dbUser);
     });
   });
@@ -28,28 +29,6 @@ module.exports = function (app) {
   });
 
   // Create new User
-  // app.post("/api/users", function (req, res) {
-  //   db.User.create({
-  //     first_name: req.body.first_name
-  //   },
-  //     {
-  //       last_name: req.body.last_name
-  //     }).then(function (dbUser) {
-  //       res.json(dbUser);
-  //     });
-  // });
-
-  // Create new User === christian's suggestion
-  // app.post("/api/users", function (req, res) {  
-  //   db.User.create(
-  //     { first_name: req.body.first_name },
-  //     { last_name: req.body.last_name }
-  //   ).then(function (dbUser) {
-  //     res.json(dbUser);
-  //   });
-  // });
-
-  // Create new User
   app.post("/api/users", function (req, res) {
     console.log(req.body);
     db.User.create(req.body)
@@ -59,13 +38,12 @@ module.exports = function (app) {
   });
 
   // Delete User
-  // app.delete("/api/users/:id", function(req, res) {
-  //   db.User.destroy({ where: { id: req.params.id } })
-  //     .then(function(dbUser) {
-  //       res.json(dbUser);
-  //     });
-  // });
-
+  app.delete("/api/users/:id", function(req, res) {
+    db.User.destroy({ where: { id: req.params.id } })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
 
   // Volunteers ====================================================
 
