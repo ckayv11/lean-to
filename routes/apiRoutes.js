@@ -45,6 +45,37 @@ module.exports = function (app) {
       });
   });
 
+  // User services ====================================================
+  app.get("/api/user-services", function (req, res) {
+    db.UserServices.findAll({}).then(function (dbUserServices) {
+      res.json(dbUserServices);
+    });
+  });
+
+  app.get("/api/user-services/:id", function (req, res) {
+    db.UserServices.findOne({ where: { id: req.params.id }, include: [db.User] })
+      .then(function (dbUserServices) {
+        res.json(dbUserServices);
+      });
+  });
+
+  // Create new user-services
+  app.post("/api/user-services", function (req, res) {
+    console.log(req.body);
+    db.UserServices.create(req.body)
+      .then(function (dbUserServices) {
+        res.json(dbUserServices);
+      });
+  });
+
+  // Delete user-services
+  app.delete("/api/user-services/:id", function(req, res) {
+    db.UserServices.destroy({ where: { id: req.params.id } })
+      .then(function(dbUserServices) {
+        res.json(dbUserServices);
+      });
+  });
+
   // Volunteers ====================================================
 
   // Get all volunteers

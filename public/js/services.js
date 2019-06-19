@@ -17,26 +17,19 @@ $(document).ready(function () {
     var $userPhone = $("#phone-number");
     var $userEmail = $("#email");
     var $userBirthday = $("#birthday");
-    // var $userGender = $("#gender");
     var $userRole = [];
 
-    // Get users
-    // getUsers();
+    var $userActivity = [];
 
-    // var $gender;
-    // console.log(`${$gender}`);
-
-    // $("input[type='radio']").click(function(){
-    //     var radioValue = $("input[name='role']:checked");
-    //     // console.log(radioValue);
-
-    //     $userRole = this.id;
-    //     console.log($userRole);
-
-    //     $("#hidden-div-role").text(this.id);
-    //     // console.log(this.id);
-
-    // });
+    var $userTrans = $("#Transportation");
+    var $userPet = $("#Pet Care");
+    var $userBaby = $("#Babysitting");
+    var $userGroceries = $("#Groceries");
+    var $userErrands = $("#Errands");
+    var $userYard = $("#Yardwork");
+    var $userHouseClean = $("#Housekeeping");
+    var $userHome = $("#Home Projects");
+    var $userMovers = $("#Movers");
 
     // The API object contains methods for each kind of request we'll make
     var API = {
@@ -59,6 +52,13 @@ $(document).ready(function () {
                 url: "api/users/" + id,
                 type: "DELETE"
             });
+        },
+        saveUserServices: function (userServices) {
+            return $.ajax({
+                type: "POST",
+                url: "api/user-services",
+                data: userServices
+            })
         },
         saveVolunteer: function (volunteer) {
             return $.ajax({
@@ -104,11 +104,11 @@ $(document).ready(function () {
                     })
                     .append($a);
 
-                var $button = $("<button>")
-                    .addClass("btn btn-danger float-right delete-user")
-                    .text("ｘ");
+                // var $button = $("<button>")
+                //     .addClass("btn btn-danger float-right delete-user")
+                //     .text("ｘ");
 
-                $li.append($button);
+                // $li.append($button);
 
                 return $li;
             });
@@ -139,6 +139,18 @@ $(document).ready(function () {
         };
         console.log(user);
 
+        // var userServices = {
+        //     transporation: $userTrans.val().trim(),
+        //     pet_care: $userPet.val().trim(),
+        //     babysitting: $userBaby.val().trim(),
+        //     groceries: $userGroceries.val().trim(),
+        //     errands: $userErrands.val().trim(),
+        //     yard_work: $userYard.val().trim(),
+        //     house_keeping: $userHouseClean.val().trim(),
+        //     home_projects: $userHome.val().trim(),
+        //     movers: $userMovers.val().trim()
+        // }
+
         if (!user.first_name || !user.last_name) {
             alert("Please enter your first and last name and email.");
 
@@ -147,8 +159,9 @@ $(document).ready(function () {
 
         else {
             API.saveUser(user).then(function () {
-                //console.log(user + "API.saveUser call");
-                refreshUsers();
+                // API.saveUserServices(userServices).then(function () {
+                    refreshUsers();
+                // })
             });
 
             $userFirst.val("");
@@ -273,7 +286,7 @@ $(document).ready(function () {
 
             var interestPara = $("<p>");
             var interestLabel = $("<label>");
-            var interestInput = $("<input />");
+            var interestInput = $("<input>");
             var interestSpan = $("<span>");
             // var interestSpan = $("<span>");
             // //console.log(interestInput[0]);
@@ -282,11 +295,13 @@ $(document).ready(function () {
             interestPara.attr("data-para", interestsArray[i]);
 
             interestLabel.addClass("append-input");
+            interestLabel.attr("for", interestsArray[i]);
 
             interestInput.addClass("filled-in append");
             interestInput.attr("type", "checkbox");
             interestInput.attr("name", "activity");
             interestInput.attr("data-input", interestsArray[i]);
+            interestInput.attr("id", interestsArray[i]);
 
             interestSpan.addClass("user-needs");
             interestSpan.attr("data-span", interestsArray[i]);
@@ -323,7 +338,7 @@ $(document).ready(function () {
         for (var i = 0; i < interestsArray.length; i++) {
             var interestPara = $("<p>");
             var interestLabel = $("<label>");
-            var interestInput = $("<input />");
+            var interestInput = $("<input>");
             var interestSpan = $("<span>");
             // var interestSpan = $("<span>");
             // //console.log(interestInput[0]);
@@ -332,11 +347,14 @@ $(document).ready(function () {
             interestPara.attr("data-para", interestsArray[i]);
 
             interestLabel.addClass("append-input");
+            interestLabel.attr("for", interestsArray[i]);
 
             interestInput.addClass("filled-in append");
             interestInput.attr("type", "checkbox");
             interestInput.attr("name", "activity");
+            interestInput.attr("data-target", "not-chosen");
             interestInput.attr("data-input", interestsArray[i]);
+            interestInput.attr("id", interestsArray[i]);
 
             interestSpan.addClass("user-needs");
             interestSpan.attr("data-span", interestsArray[i]);
@@ -347,7 +365,6 @@ $(document).ready(function () {
             interestLabel.append(interestSpan);
             interestPara.append(interestLabel);
             $("#append-radios-checkmarks").append(interestPara);
-
         }
     });
 

@@ -1,0 +1,9 @@
+<li>
+	{{this.first_name}}
+
+	<button class="change-role" data-id="{{id}}" data-newrole="{{requester}}">
+		{{#if requester}}Change to Volunteer{{else}}Change to Requester{{/if}}
+	</button>
+
+	<button class="btn btn-danger float-right delete-user" data-id="{{this.id}}">DELETE!</button>
+</li>

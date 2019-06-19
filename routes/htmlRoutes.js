@@ -16,10 +16,10 @@ Handlebars.registerHelper("render_category", function(category, selection, optio
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    db.User.findAll({}).then(function (dbUsers) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: dbUsers
       });
     });
   });

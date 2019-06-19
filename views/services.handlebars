@@ -126,7 +126,7 @@
                             Lean-To user!</p>
                     </div>
                     <div class="card-action">
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal-user-form"
+                        <a class="waves-effect waves-light btn modal-trigger" data-target="modal-user-form"
                             id="user-btn">Sign-up!</a>
                     </div>
 
@@ -141,145 +141,22 @@
 
         <div class="row">
             <div class="hero-image" id="services-hero-image">
-                <p id="services-hero-text">If you need more information or have questions, please click on the purple chat icon to your right!</p>
+                <p id="services-hero-text">If you need more information or have questions, please click on the purple
+                    chat icon to your right!</p>
             </div>
         </div>
     </div>
 </div>
 
 {{!-- User Modal --}}
+{{!-- Removed user modal from here, since it's in the main.hb, the html didn't need to be repeated here --}}
 
-<div id="modal-user-form" class="modal">
-    <h4>Become a User:</h4>
-    <div class="row">
-        <div class="col s12">
-            <h6>
-                You will need to create a user account to be able to sign up to volunteer or request services.
-            </h6>
-        </div>
-    </div>
-    <br>
-    <h4>Contact Information</h4>
-    <div class="row">
-        <form class="col s12" id="user-form" action="POST">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Jane" id="user-first-name" type="text" class="validate">
-                    <label for="user-first-name">First Name: </label>
-                </div>
-                <div class="input-field col s6">
-                    <input placeholder="Smith" id="user-last-name" type="text" class="validate">
-                    <label for="user-last-name">Last Name: </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input placeholder="123 Main Street" id="address" type="text" class="validate">
-                    <label for="address">Address: </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input placeholder="Apt. 137" id="address-2" type="text" class="validate">
-                    <label for="address-2">Address: </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s3">
-                    <input placeholder="Kansas City" id="city" type="text" class="validate">
-                    <label for="city">City: </label>
-                </div>
-                <div class="input-field col s3">
-                    <input placeholder="Kansas" id="state" type="text" class="validate">
-                    <label for="state">State: </label>
-                </div>
-                <div class="input-field col s3">
-                    <input placeholder="66012" id="zip-code" type="text" class="validate">
-                    <label for="zip-code">Zip Code: </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s3">
-                    <input placeholder="123-456-7890" id="phone-number" type="text" class="validate">
-                    <label for="phone-number">Phone Number: </label>
-                </div>
-                <div class="input-field col s3">
-                    <input placeholder="email@something.com" id="email" type="text" class="validate">
-                    <label for="email">Email: </label>
-                </div>
-                <div class="input-field col s3">
-                    <input placeholder="01/01/2001" id="birthday" type="text" class="validate">
-                    <label for="birthday">Date of Birth: </label>
-                </div>
-            </div>
-            <div class="row">
-                <h6>What pronouns do you prefer?</h6>
-                <div class="col s12">
-                    <p>
-                        <label>
-                            <input id="male" class="with-gap" name="gender" type="radio" />
-                            <span>He/Him</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input id="female" class="with-gap" name="gender" type="radio" />
-                            <span>She/Her</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input id="non-binary" class="with-gap" name="gender" type="radio" />
-                            <span>They/Them</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input id="denies" class="with-gap" name="gender" type="radio" />
-                            <span>Prefer not to disclose</span>
-                        </label>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <h6>Do you want to volunteer or request services:</h6>
-                <div class="col s12">
-                    <div style="visibility: hidden; display: none;">
-                        <p>
-                            <label>
-                                <input id="hidden-div-role" type="text" name="role">
-                            </label>
-                        </p>
-                    </div>
-                    <p>
-                        <label>
-                            <input id="volunteer-chosen" class="with-gap" name="role" type="radio" />
-                            <span>Volunteer</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input id="request-services-chosen" class="with-gap" name="role" type="radio" />
-                            <span>Request Services</span>
-                        </label>
-                    </p>
-                </div>
-            </div>
-            <div class="row append-h6">
-                <h6>What activity are you interested in?</h6>
-                <div class="col s12" id="append-radios-checkmarks"></div>
-            </div>
-            <a class="modal-close waves-effect waves-light btn" id="submit-user">Submit</a>
-        </form>
-    </div>
-</div>
+{{!-- List of all Users --}}
 
-        {{!-- List of all Users --}}
-    
-    <div class="row">
-        <div class="col s12">
-    
-            {{!-- <form class="clearfix s12" action="POST">
+<div class="row">
+    <div class="col s12">
+
+        {{!-- <form class="clearfix s12" action="POST">
                 <div class="form-group">
                     <label for="user-name">User Name</label>
                     <input type="text" id="user-name" class="form-control" aria-describedby="first_name"
@@ -287,51 +164,18 @@
                 </div>
                 <button id="submit_user" class="btn btn-primary float-right">Submit</button>
             </form> --}}
-    
-            <h3>Users:</h3>
-            <ul id="users-list" class="list-group">
-                {{#each users}}
-                <li data-user-id="{{this.id}}" class="list-user-item">
-                    <a href="user/{{this.id}}">{{this.first_name}} {{this.last_name}}</a>
-                    <button class="btn btn-danger float-right delete-user">ｘ</button>
-                </li>
-                {{/each}}
-            </ul>
-    
-        </div>
-    </div>
 
-    {{!-- example code below --}}
-    {{!-- <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
-              placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description"
-              placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
+        <h3>Users:</h3>
+        <ul id="users-list" class="list-group">
+            {{#each users}}
+            <li data-user-id="{{this.id}}" class="list-user-item">
+                <a href="user/{{this.id}}">{{this.first_name}} {{this.last_name}}</a>
+                {{!-- <button class="btn btn-danger float-right delete-user">ｘ</button> --}}
+            </li>
+            {{/each}}
         </ul>
-      </div>
-    </div> --}}
 
+    </div>
+</div>
 
 {{!-- List of volunteers --}}
-
