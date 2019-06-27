@@ -18,6 +18,12 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/api/admin/:role", function(req, res) {
+    db.User.findAll({ where: {role: req.params.role} }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
   // User findOne query
   // We set the value to an array of the models we want to include in a left outer join
   // In this case, just db.UserServices

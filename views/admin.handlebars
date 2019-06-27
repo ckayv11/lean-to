@@ -72,22 +72,23 @@
 
     {{!-- TESTING ====================================================================  --}}
 
+<h3>Volunteers: </h3>
+    <ul>
+        {{#each users}}
+        {{#if this.isVolunteer}}
+        {{this.first_name}}
+        {{/if}}
+        {{/each}}
+    </ul>
 
-<ul>
-    {{#each users}}
-    {{#if role="requester"}}
-    {{> users/user-block}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-<ul>
-    {{#each users}}
-    {{#if role="volunteer"}}
-    {{> users/user-block}}
-    {{/if}}
-    {{/each}}
-</ul>
+<h3>Requesters: </h3>
+    <ul>
+        {{#each users}}
+        {{#if this.isRequester}}
+        {{this.first_name}}
+        {{/if}}
+        {{/each}}
+    </ul>
 
 
 </div>
