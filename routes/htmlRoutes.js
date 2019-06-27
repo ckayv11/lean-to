@@ -4,7 +4,7 @@ var moment = require("moment");
 var axios = require("axios");
 
 // Handlebars helper to render page specific to category clicked
-Handlebars.registerHelper("render_category", function(category, selection, options) {
+Handlebars.registerHelper("render_category", function (category, selection, options) {
   console.log(category, selection);
   if (category === selection) {
     return options.fn(this);
@@ -16,37 +16,37 @@ Handlebars.registerHelper("render_category", function(category, selection, optio
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    db.User.findAll({}).then(function (dbUsers) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        users: dbUsers
       });
     });
   });
 
-    // Load categories/:categories page
-    app.get("/categories/:category?", function(req, res) {
-      console.log(req.params)
-      const category = req.params.category ?req.params.category : "feminism";
-      const currentDate = moment().format('YYYY-MM-DD');
-      var queryURL = 'https://newsapi.org/v2/everything?' +
-        'q=' + category +
-        '&from=' + currentDate +
-        'sortBy=relevance&' +
-        'language=en&' +
-        'apiKey=' + process.env.API_key;
-      // axios call to get api based on the category
-      axios.get(queryURL).then(function(result) {
-        console.log(result);
-        var resultData = result.data.articles;
-        for (i = 0; i < resultData.length; i++) {
-          resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-        }
+  // Load categories/:categories page
+  app.get("/categories/:category?", function (req, res) {
+    console.log(req.params)
+    const category = req.params.category ? req.params.category : "feminism";
+    const currentDate = moment().format('YYYY-MM-DD');
+    var queryURL = 'https://newsapi.org/v2/everything?' +
+      'q=' + category +
+      '&from=' + currentDate +
+      'sortBy=relevance&' +
+      'language=en&' +
+      'apiKey=' + process.env.API_key;
+    // axios call to get api based on the category
+    axios.get(queryURL).then(function (result) {
+      console.log(result);
+      var resultData = result.data.articles;
+      for (i = 0; i < resultData.length; i++) {
+        resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
+      }
       res.render("categories", {
         category: req.params.category, result: resultData
       });
     });
-    });
+  });
 
   // Load services page
   app.get("/services", function (req, res) {
@@ -60,10 +60,19 @@ module.exports = function (app) {
 
   // Load admin page
   app.get("/admin", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    db.User.findAll({}).then(function (dbUsers) {
+      console.log(dbUsers);
+
+      // .map method is taking the dbUsers response and for every user, 
+      // it's creating a new parameter that says that any user with
+      // a user.role of "volunteer" or "requester" is the isVolunteer or isRequester,
+      // which can then be called in the hb's files.
+      dbUsers.map(user => user.isVolunteer = user.role === "volunteer");
+      dbUsers.map(user => user.isRequester = user.role === "requester");
+
       res.render("admin", {
         msg: "Welcome!",
-        examples: dbExamples
+        users: dbUsers
       });
     });
   });

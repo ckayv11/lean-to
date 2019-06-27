@@ -1,24 +1,61 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
-        first_name: DataTypes.STRING,
-        last_name: DataTypes.STRING,
-        street_address: DataTypes.STRING,
-        address_2: DataTypes.STRING,
-        city: DataTypes.STRING,
-        state: DataTypes.STRING,
-        zip_code: DataTypes.INTEGER,
-        phone_number: DataTypes.INTEGER,
-        email: DataTypes.STRING,
-        date_of_birth: DataTypes.DATE,
-        gender: DataTypes.BOOLEAN,
-        role: DataTypes.STRING
+        first_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        street_address: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        address_2: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        state: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        zip_code: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        phone_number: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { isEmail: true }
+        },
+        date_of_birth: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        // gender: {
+        //     type: DataTypes.ENUM,
+        //     values: ['male', 'female', 'non-binary', 'denies']
+        // },
+        role: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     });
 
-    User.associate = function(models) {
-        User.hasOne(models.UserServices, {
-            onDelete: "cascade"
-        });
-    };
+    // User.associate = function (models) {
+    //     User.hasOne(models.UserServices, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
     return User;
 };

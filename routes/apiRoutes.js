@@ -12,7 +12,14 @@ module.exports = function (app) {
   // Set value to an array of the models we want to include in a left outer join
   // In this case, just db.UserServices
   app.get("/api/users", function (req, res) {
-    db.User.findAll({ include: [db.UserServices] }).then(function (dbUser) {
+    //db.User.findAll({ include: [db.UserServices] }).then(function (dbUser) {
+    db.User.findAll({}).then(function (dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  app.get("/api/admin/:role", function(req, res) {
+    db.User.findAll({ where: {role: req.params.role} }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
@@ -28,28 +35,6 @@ module.exports = function (app) {
   });
 
   // Create new User
-  // app.post("/api/users", function (req, res) {
-  //   db.User.create({
-  //     first_name: req.body.first_name
-  //   },
-  //     {
-  //       last_name: req.body.last_name
-  //     }).then(function (dbUser) {
-  //       res.json(dbUser);
-  //     });
-  // });
-
-  // Create new User === christian's suggestion
-  // app.post("/api/users", function (req, res) {  
-  //   db.User.create(
-  //     { first_name: req.body.first_name },
-  //     { last_name: req.body.last_name }
-  //   ).then(function (dbUser) {
-  //     res.json(dbUser);
-  //   });
-  // });
-
-  // Create new User
   app.post("/api/users", function (req, res) {
     console.log(req.body);
     db.User.create(req.body)
@@ -59,13 +44,43 @@ module.exports = function (app) {
   });
 
   // Delete User
-  // app.delete("/api/users/:id", function(req, res) {
-  //   db.User.destroy({ where: { id: req.params.id } })
-  //     .then(function(dbUser) {
-  //       res.json(dbUser);
-  //     });
-  // });
+  app.delete("/api/users/:id", function(req, res) {
+    db.User.destroy({ where: { id: req.params.id } })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
 
+  // User services ====================================================
+  app.get("/api/user-services", function (req, res) {
+    db.UserServices.findAll({}).then(function (dbUserServices) {
+      res.json(dbUserServices);
+    });
+  });
+
+  app.get("/api/user-services/:id", function (req, res) {
+    db.UserServices.findOne({ where: { id: req.params.id }, include: [db.User] })
+      .then(function (dbUserServices) {
+        res.json(dbUserServices);
+      });
+  });
+
+  // Create new user-services
+  app.post("/api/user-services", function (req, res) {
+    console.log(req.body);
+    db.UserServices.create(req.body)
+      .then(function (dbUserServices) {
+        res.json(dbUserServices);
+      });
+  });
+
+  // Delete user-services
+  app.delete("/api/user-services/:id", function(req, res) {
+    db.UserServices.destroy({ where: { id: req.params.id } })
+      .then(function(dbUserServices) {
+        res.json(dbUserServices);
+      });
+  });
 
   // Volunteers ====================================================
 
@@ -113,49 +128,6 @@ module.exports = function (app) {
     });
   });
   // EXAMPLES end ==================================================
-
-
-  // ------------ Categories API Routes ------------//  
-  // Get random articles when category page is loaded
-  // app.get("/categories", function(req, res) {
-  //   const currentDate = moment().format('YYYY-MM-DD');
-  //   var queryURL = 'https://newsapi.org/v2/everything?' +
-  //     'q=feminism' +
-  //     '&from=' + currentDate +
-  //     'sortBy=relevance&' +
-  //     'language=en&' +
-  //     'apiKey=' + process.env.API_key;
-  //   // axios call to get api based on the category
-  //   axios.get(queryURL).then(function(result) {
-  //     console.log(result);
-  //     var resultData = result.data.articles;
-  //     for (i = 0; i < resultData.length; i++) {
-  //       resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-  //     }
-  //     res.render("categories", {result: resultData})
-  //   });
-  // });  
-
-  // Get articles by specific category
-  // app.get("/api/categories/:category", function(req, res) {
-  //   const category = req.params.category;
-  //   const currentDate = moment().format('YYYY-MM-DD');
-  //   var queryURL = 'https://newsapi.org/v2/everything?' +
-  //     'q=' + category +
-  //     '&from=' + currentDate +
-  //     'sortBy=relevance&' +
-  //     'language=en&' +
-  //     'apiKey=' + process.env.API_key;
-  //   // axios call to get api based on the category
-  //   axios.get(queryURL).then(function(result) {
-  //     console.log(result);
-  //     var resultData = result.data.articles;
-  //     for (i = 0; i < resultData.length; i++) {
-  //       resultData[i].publishedAt = moment(resultData[i].publishedAt).format("LL");
-  //     }
-  //     res.render("categories", {result: resultData})
-  //   });
-  // });
 
   // ------------ Index API Routes ------------//  
 

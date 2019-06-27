@@ -15,7 +15,7 @@
 
     <!-- Open requests -->
 
-    <div class="row">
+    {{!-- <div class="row">
         <div class="col s12 m6 l4" id="open">
             <h5 class="center-align">Open Requests</h5>
             <div class="card center-align">
@@ -30,11 +30,11 @@
                     <a href="#">Sample link</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Request in progress -->
 
-        <div class="col s12 m6 l4" id="progress">
+        {{!-- <div class="col s12 m6 l4" id="progress">
             <h5 class="center-align">Requests in Progress</h5>
             <div class="card center-align">
                 <div class="card-image">
@@ -48,11 +48,11 @@
                     <a href="#">Sample link</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Volunteer List -->
 
-        <div class="col s12 m6 l4" id="volunteer_list">
+        {{!-- <div class="col s12 m6 l4" id="volunteer_list">
             <h5 class="center-align">Volunteer List</h5>
             <div class="card center-align">
                 <div class="card-image">
@@ -67,5 +67,28 @@
                 </div>
             </div>
         </div>
-    </div>
+
+    </div> --}}
+
+    {{!-- TESTING ====================================================================  --}}
+
+<h3>Volunteers: </h3>
+    <ul>
+        {{#each users}}
+        {{#if this.isVolunteer}}
+        {{this.first_name}}
+        {{/if}}
+        {{/each}}
+    </ul>
+
+<h3>Requesters: </h3>
+    <ul>
+        {{#each users}}
+        {{#if this.isRequester}}
+        {{this.first_name}}
+        {{/if}}
+        {{/each}}
+    </ul>
+
+
 </div>
