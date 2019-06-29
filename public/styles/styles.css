@@ -124,6 +124,9 @@ h4 {
 
 thead {
   background-color: rgba(112, 89, 124, 0.308);
+}
+
+th {
   border-radius: 0%;
 }
 
