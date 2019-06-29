@@ -108,15 +108,15 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>First Name:</th>
-                                    <th>Last Name:</th>
-                                    <th>State:</th>
-                                    <th>Role:</th>
+                                    <th><strong>First Name:</strong></th>
+                                    <th><strong>Last Name:</strong></th>
+                                    <th><strong>State:</strong></th>
+                                    <th><strong>Role:</strong></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {{#each users}}
-                                {{#if this.isVolunteer}}
+                                {{#if this.isRequester}}
                                 <tr>
                                     <th>{{this.first_name}}</th>
                                     <th>{{this.last_name}}</th>
