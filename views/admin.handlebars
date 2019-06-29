@@ -32,9 +32,9 @@
             </div>
         </div> --}}
 
-        <!-- Request in progress -->
+    <!-- Request in progress -->
 
-        {{!-- <div class="col s12 m6 l4" id="progress">
+    {{!-- <div class="col s12 m6 l4" id="progress">
             <h5 class="center-align">Requests in Progress</h5>
             <div class="card center-align">
                 <div class="card-image">
@@ -50,9 +50,9 @@
             </div>
         </div> --}}
 
-        <!-- Volunteer List -->
+    <!-- Volunteer List -->
 
-        {{!-- <div class="col s12 m6 l4" id="volunteer_list">
+    {{!-- <div class="col s12 m6 l4" id="volunteer_list">
             <h5 class="center-align">Volunteer List</h5>
             <div class="card center-align">
                 <div class="card-image">
@@ -72,23 +72,65 @@
 
     {{!-- TESTING ====================================================================  --}}
 
-<h3>Volunteers: </h3>
-    <ul>
-        {{#each users}}
-        {{#if this.isVolunteer}}
-        {{this.first_name}}
-        {{/if}}
-        {{/each}}
-    </ul>
+    <div class="container" id="user-container">
+        <div class="row">
+            <div class="card-panel">
+                <div class="row">
 
-<h3>Requesters: </h3>
-    <ul>
-        {{#each users}}
-        {{#if this.isRequester}}
-        {{this.first_name}}
-        {{/if}}
-        {{/each}}
-    </ul>
+                    <div class="col s12 m6">
+                        <h4>Volunteers:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><strong>First Name:</strong></th>
+                                    <th><strong>Last Name:</strong></th>
+                                    <th><strong>State:</strong></th>
+                                    <th><strong>Role:</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each users}}
+                                {{#if this.isVolunteer}}
+                                <tr>
+                                    <th>{{this.first_name}}</th>
+                                    <th>{{this.last_name}}</th>
+                                    <th>{{this.state}}</th>
+                                    <th>{{this.role}}</th>
+                                </tr>
+                                {{/if}}
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <div class="col s12 m6">
+                        <h4>Requesters:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>First Name:</th>
+                                    <th>Last Name:</th>
+                                    <th>State:</th>
+                                    <th>Role:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each users}}
+                                {{#if this.isVolunteer}}
+                                <tr>
+                                    <th>{{this.first_name}}</th>
+                                    <th>{{this.last_name}}</th>
+                                    <th>{{this.state}}</th>
+                                    <th>{{this.role}}</th>
+                                </tr>
+                                {{/if}}
+                                {{/each}}
+                            </tbody>
+                        </table>
 
-</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

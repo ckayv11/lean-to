@@ -6,6 +6,10 @@ body, html {
   width: 85%;
 }
 
+#user-container {
+  width: 85%;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -111,6 +115,16 @@ h3 {
   font-size: 24px;
   padding: 10px 0 10px 0;
   color: rgb(105, 105, 105);
+}
+
+h4 {
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+thead {
+  background-color: rgba(112, 89, 124, 0.308);
+  border-radius: 0%;
 }
 
 /* ==================================== Etc. ==================================== */
