@@ -368,6 +368,8 @@ h5 {
     transform: translate(-50%,-50%);
   }
 
+}
+
 @media only screen and (max-width: 990px) {
 
   #services-hero-text {
@@ -384,6 +386,7 @@ h5 {
   .explore, .service {
     margin-bottom: 10%;
   }
+}
 
   @media only screen and (max-width: 780px) {
 
@@ -410,4 +413,33 @@ h5 {
     #categories-hero-text h3 {
       font-size: 1.5rem;
     }
+}
+
+@media only screen and (max-width: 420px) {
+
+  .first-nav a {
+    font-size: 10px;
+  }
+
+  #sec-nav {
+    font-size: 8px;
+  }
+
+  .modal-close {
+    background-color: #70597C;
+  }
+  
+  .modal-content h6 {
+    color: black;
+    font-size: 14px;
+  }
+  
+  .modal-content h4 {
+    color: rgb(105, 105, 105);
+    font-size: 18px;
+  }
+  
+  #modal-user-form, #modal-login-form {
+    padding: 2%;
+  }
 }
