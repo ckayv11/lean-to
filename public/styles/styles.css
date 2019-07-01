@@ -195,6 +195,10 @@ h5 {
   background-color: rgb(184, 162, 196);
 }
 
+#submit-btn {
+  color: whitesmoke;
+}
+
 /* ==================================== Modal ==================================== */
 .modal-close {
   background-color: #70597C;
@@ -215,27 +219,27 @@ h5 {
   position: relative;
 }
 
-#modal-user-form {
+#modal-user-form, #modal-login-form {
   padding: 5%;
 }
 
 
 /* ==================================== Footer ==================================== */
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #eceff1;
-  text-align: left;
-  padding: 20px;
-  font-size: 15px;
-}
 
-.social-icons {
-  float: right;
-  margin-right: 10px;
+.page-footer, .footer-copyright, .footer-icons, .footer-content a, .copyright {
+  background-color: #eceff1;
   color: #455a64;
 }
+
+.page-footer li {
+  height: 20px;
+}
+
+.page-footer .footer-icons {
+  margin-right: 10px;
+  color: #70597C;
+}
+
 
 /* ==================================== Hero Banner ==================================== */
 #categories-hero-image {
@@ -351,7 +355,7 @@ h5 {
 
 /* ==================================== Media Queries ==================================== */
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1024px) {
 
   #services-hero-text {
     color: whitesmoke;
@@ -364,9 +368,25 @@ h5 {
     transform: translate(-50%,-50%);
   }
 
+}
+
+@media only screen and (max-width: 990px) {
+
+  #services-hero-text {
+    color: whitesmoke;
+    font-size: 18px;
+    text-align: left;
+    padding: 0;
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+  }
+
   .explore, .service {
     margin-bottom: 10%;
   }
+}
 
   @media only screen and (max-width: 780px) {
 
@@ -393,4 +413,33 @@ h5 {
     #categories-hero-text h3 {
       font-size: 1.5rem;
     }
+}
+
+@media only screen and (max-width: 420px) {
+
+  .first-nav a {
+    font-size: 10px;
+  }
+
+  #sec-nav {
+    font-size: 8px;
+  }
+
+  .modal-close {
+    background-color: #70597C;
+  }
+  
+  .modal-content h6 {
+    color: black;
+    font-size: 14px;
+  }
+  
+  .modal-content h4 {
+    color: rgb(105, 105, 105);
+    font-size: 18px;
+  }
+  
+  #modal-user-form, #modal-login-form {
+    padding: 2%;
+  }
 }
