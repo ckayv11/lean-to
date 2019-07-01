@@ -195,6 +195,10 @@ h5 {
   background-color: rgb(184, 162, 196);
 }
 
+#submit-btn {
+  color: whitesmoke;
+}
+
 /* ==================================== Modal ==================================== */
 .modal-close {
   background-color: #70597C;
@@ -221,21 +225,21 @@ h5 {
 
 
 /* ==================================== Footer ==================================== */
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #eceff1;
-  text-align: left;
-  padding: 20px;
-  font-size: 15px;
-}
 
-.social-icons {
-  float: right;
-  margin-right: 10px;
+.page-footer, .footer-copyright, .footer-icons, .footer-content a, .copyright {
+  background-color: #eceff1;
   color: #455a64;
 }
+
+.page-footer li {
+  height: 20px;
+}
+
+.page-footer .footer-icons {
+  margin-right: 10px;
+  color: #70597C;
+}
+
 
 /* ==================================== Hero Banner ==================================== */
 #categories-hero-image {
