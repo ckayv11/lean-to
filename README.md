@@ -6,7 +6,7 @@
 - Jennifer Harden [Link to GitHub](https://github.com/JenHarden)
 - Sydney Weaver [Link to GitHub](https://github.com/sweave19)
 
-**Link to project:** 
+**Link to project:** https://lean-to.herokuapp.com/
 
 ## About
 
