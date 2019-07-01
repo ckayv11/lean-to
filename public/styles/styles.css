@@ -215,7 +215,7 @@ h5 {
   position: relative;
 }
 
-#modal-user-form {
+#modal-user-form, #modal-login-form {
   padding: 5%;
 }
 

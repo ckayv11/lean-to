@@ -146,12 +146,31 @@
               </div>
             </div>
           </div>
-          {{!-- </div>
-            <div class="modal-footer">
-            </div> --}}
         </li>
-
-        <li><a href="/login">Login</a>
+        <li>
+          <a class="modal-trigger" data-target="modal-login-form">Login</a>
+          <div id="modal-login-form" class="modal modal-content">
+            <div class="modal-content">
+              <h4>Login to view your account</h4>
+              <div class="row">
+                <form class="col s12" id="login-form" action="">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="email@something.com" id="email" type="text" class="validate">
+                      <label for="email">Email: </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="password" id="password" type="text" class="validate">
+                      <label for="password">Password: </label>
+                    </div>
+                  </div>
+                  <a class="modal-close waves-effect waves-light btn" id="login">Login</a>
+                </form>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
