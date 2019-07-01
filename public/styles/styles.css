@@ -355,7 +355,7 @@ h5 {
 
 /* ==================================== Media Queries ==================================== */
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1024px) {
 
   #services-hero-text {
     color: whitesmoke;
@@ -364,6 +364,19 @@ h5 {
     padding: 0;
     position: absolute;
     top: 90%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+  }
+
+@media only screen and (max-width: 990px) {
+
+  #services-hero-text {
+    color: whitesmoke;
+    font-size: 18px;
+    text-align: left;
+    padding: 0;
+    position: absolute;
+    top: 85%;
     left: 40%;
     transform: translate(-50%,-50%);
   }
